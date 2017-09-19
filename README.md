@@ -1,4 +1,7 @@
+//PL
 Moje pierwsze repozytorium. Informatyka
-Zmiany - test
-Pierwsza zmiana lokalna
-Druga zmiana lokalna
+Zapewne wiekszosc to C++
+
+//ENG
+My first repository. IT lessons;
+Mainly C++
