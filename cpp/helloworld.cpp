@@ -1,7 +1,3 @@
-/*
- helloworld.cpp
-*/
- 
 #include <iostream>
 
 using namespace std;
@@ -10,16 +6,19 @@ using namespace std;
 int main(int argc, char **argv)
 {
     //char imie //deklaracja zmiennej char
-    //char imie[10]; //deklaracja tablicy znakowej
+	//char imie[10]; //deklaracja tablicy znakowej
     string imie; //deklaracja zmiennej string
-    
-	cout<<"Hello world"<<endl; 
+    string nazwisko;
+
+	cout<<"Hello!"<<endl;
 	cout<<"Podaj imie: ";
-    cin >>imie;
+    cin>>imie;
+    cout<<"Podaj nazwisko: ";
+    cin>>nazwisko;
     //cin.getline(imie, 10);
-    
-    cout << "Cześć " <<imie <<endl;
-    
-	return 0;
+
+    cout << "Czesc " <<imie<<" "<<nazwisko<<endl;
+
+	return (0);
 }
 
