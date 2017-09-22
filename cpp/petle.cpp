@@ -31,8 +31,8 @@ int main()
             suma[i]=suma[i-1] + liczba[i];
         }
 
-        system("cls");
-        //system("clear"); //linux
+        //system("cls");
+        system("clear"); //linux
     }
 
         cout<<endl<<"Suma twoich liczb = "<<suma[75]<<endl;
