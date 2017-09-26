@@ -4,40 +4,68 @@
 */
 
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
 
 int main(int argc, char **argv)
 {
-    long double a=0;
-    long double b=0;
-    long double c=0;
+    int a=0;
+    int b=0;
+    int c=0;
     
-    cout<<"Podaj pierwsza liczbe: ";
-    cin>>a;
-    cout<<"Podaj druga liczbe: ";
-    cin>>b;
-    cout<<"Podaj trzecia liczbe: ";
-    cin>>c;
+    
+    for(;;)
+    {
+        cout<<"Podaj pierwsza liczbe: ";
+        cin>>a;
+        cout<<"Podaj druga liczbe: ";
+        cin>>b;
+        cout<<"Podaj trzecia liczbe: ";
+        cin>>c;
+        
+        if(!cin) //jesli wpiszemy np litere
+        {
+                system("cls"); //windows
+                //system("clear"); //linux
+                cout<<"Podales cos co nie bylo liczba"<<endl;
+                cin.clear(); // czysci flagi bledu strumienia
+                cin.sync(); // czysci bufor strumienia
+        }
+        else if( a>b && a>c )
+        {
+            cout<<"a="<<a<<" jest najwieksza liczba"<<endl;
+        } 
+        else if( b>a && b>c )
+        {
+            cout<<"b="<<b<<" jest najwieksza liczba"<<endl;
+        } 
+        else if( c>b && c>a )
+        {
+            cout<<"c="<<c<<" jest najwieksza liczba"<<endl;
+        } 
+        else if( a==b && b==c )
+        {
+            cout<<"Wszystkie liczby sa rowne"<<endl;
+        }
+        else if( a>c && a==b)
+        {
+            cout<<"Najwieksza liczba jest a="<<a<<" i b="<<b<<endl;
+        }
+        else if( a>b && a==c)
+        {
+            cout<<"Najwieksza liczba jest a="<<a<<" i c="<<c<<endl;
+        }
+        else if( a<b && b==c)
+        {
+            cout<<"Najwieksza liczba jest b="<<b<<" i c="<<c<<endl;
+        }
 
-    if( a>b && a>c )
-    {
-        cout<<"a="<<a<<" jest najwieksza liczba"<<endl;
-    } 
-    else if ( b>a && b>c )
-    {
-        cout<<"b="<<b<<" jest najwieksza liczba"<<endl;
-    } 
-    else if ( c>b && c>a )
-    {
-        cout<<"c="<<c<<" jest najwieksza liczba"<<endl;
-    } 
-    else if ( a==b && b==c )
-    {
-        cout<<"Wszystkie liczby sa rowne"<<endl;
+        cout<<endl;
+
     }
-    
+   
     return (0);
 }
 
