@@ -1,5 +1,4 @@
 #include <iostream>
-#include <windows.h>
 #include <cstdlib>
 
 
@@ -20,10 +19,6 @@ int main(int argc, char **argv)
     cout<<"Pole kwadratu = "<< a*a<<endl;
     cout<<"Obwod kwadratu = "<< a*4<<endl<<endl;
     
-    
-    Sleep(3000);
-    system("cls");
-    //system("clear");
 
     }
    
