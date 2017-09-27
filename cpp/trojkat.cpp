@@ -27,13 +27,13 @@ int main(int argc, char **argv)
     cout<<"Podaj trzeci bok: ";
     cin>>c;
     
-    if(a+b>c || b+c>a || c+a>b)
+    if(a+b>c && b+c>a && c+a>b)
     {
         cout<<"Obwod jest rowny: "<< a+b+c<<endl;
         p=(a+b+c)/2;
         P=sqrt(p*(p-a)*(p-b)*(p-c));
         cout<<"Pole jest rowne: "<<P;
-    }
+    } else cout<<"Nie mozna utworzyc trojkata";
 
 
     return 0;
