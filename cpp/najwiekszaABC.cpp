@@ -33,7 +33,6 @@ int main(int argc, char **argv)
                 cin.clear();                                    // czysci flagi bledu strumienia
                 cin.sync();                                     // czysci bufor strumienia
         }else
-        
         if( a>b && a>c )
         {
             cout<<"a="<<a<<" jest najwieksza liczba"<<endl;
