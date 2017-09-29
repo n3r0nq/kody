@@ -37,7 +37,7 @@ int main(int argc, char **argv)
         p=(a+b+c)/2;
         P=sqrt(p*(p-a)*(p-b)*(p-c));
         cout<<"Pole jest rowne: "<<P;
-    }
+    } else cout<<"Nie mozna utworzyc trojkata";
 
 
     return 0;

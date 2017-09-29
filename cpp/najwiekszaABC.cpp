@@ -24,7 +24,7 @@ int main(int argc, char **argv)
         cout<<"Podaj trzecia liczbe: ";
         cin>>c;
         
-        /*
+        
         if(!cin)                                                //jesli wpiszemy np litere
         {
                 system("cls");                                  //windows
@@ -32,10 +32,12 @@ int main(int argc, char **argv)
                 cout<<"Podales cos co nie bylo liczba"<<endl;
                 cin.clear();                                    // czysci flagi bledu strumienia
                 cin.sync();                                     // czysci bufor strumienia
-        }else*/
+        }else
+        
         if( a>b && a>c )
         {
             cout<<"a="<<a<<" jest najwieksza liczba"<<endl;
+            exit(0);
         } 
         else if( b>a && b>c )
         {
@@ -74,4 +76,3 @@ int main(int argc, char **argv)
    
     return (0);
 }
-
