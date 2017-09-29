@@ -13,11 +13,12 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    int a=0;
-    int b=0;
-    int c=0;
+    float a=0;
+    float b=0;
+    float c=0;
     float p=0;
     float P=0;
+    float obwod=0;
     
     cout<<"Jestem programem liczacym obwod i pole trojkata"<<endl;
     cout<<"Podaj pierwszy bok: ";
@@ -27,9 +28,12 @@ int main(int argc, char **argv)
     cout<<"Podaj trzeci bok: ";
     cin>>c;
     
-    if(a+b>c || b+c>a || c+a>b)
+    if(a+b>c && b+c>a && c+a>b)
     {
-        cout<<"Obwod jest rowny: "<< a+b+c<<endl;
+        cout<<"Mozna zbudwac!"<<endl;
+        obwod=a+b+c;
+        cout<<"Obwod jest rowny: "<<obwod<<endl;
+        
         p=(a+b+c)/2;
         P=sqrt(p*(p-a)*(p-b)*(p-c));
         cout<<"Pole jest rowne: "<<P;
