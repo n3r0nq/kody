@@ -1,44 +1,28 @@
+/*
+ * petle.cpp
+    
+ */
+
+
 #include <iostream>
-#include <cstdlib>
-#include <stdio.h> //getchar
 
 using namespace std;
 
-int suma[75];
-int liczba[75];
-
-int main()
+int main(int argc, char **argv)
 {
-    cout<<"Czesc. Jestem programem liczacym sume liczb"<<endl;
-    //cout<<"Jesli sie pomylisz napisz: 'c'"<<endl; //narazie nie wiem jak zrobic mechanizm cofania :-D
-
-    for(int i=1; i<=75; i++)
+    
+    for(int i=0; i<=100; i++) 
     {
-        suma[0]=0;
-        cout<<endl<<"Podaj "<<i<<" liczbe: ";
-        cin>> liczba[i];
-        if(!cin) //jesli wpiszemy np litere
+        //if(i%2 = 0) //nieparzyste
+        if(i%10 == 0) //pelne 10
         {
-            i--;
-            cout<<"To nie jest liczba"<<endl;
-
-            //odpowiada za nie zapetlanie
-            cin.clear(); // czysci flagi bledu strumienia
-            cin.sync(); // czysci bufor strumienia
+            cout<<i<<endl;
         }
-        else
-        {
-            suma[i]=suma[i-1] + liczba[i];
-        }
-
-        //system("cls");
-        system("clear"); //linux
+        
+        //cout<<'*'<<endl;
     }
-
-        cout<<endl<<"Suma twoich liczb = "<<suma[75]<<endl;
-
-        //system("pause");
-        getchar();getchar(); //stopuje
-
+    
+    
     return 0;
 }
+

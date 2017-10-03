@@ -4,7 +4,7 @@
 
 
 #include <iostream>
-#include <windows.h> //Sleep dla windows
+//#include <windows.h> //Sleep dla windows
 #include <unistd.h> //Sleep dla linux
 #include <cmath>
 #include <math.h>
@@ -104,9 +104,9 @@ int main(int argc, char **argv)
                 default: 
                 {
                     cout<<"Podales cos spoza zakresu!";
-                    Sleep(2000);
+                    //Sleep(2000);
                     system("clear");
-                    system("cls");
+                    //system("cls");
                 }
             }
         }
@@ -136,18 +136,18 @@ int main(int argc, char **argv)
                 case '6':
                 {
                     cout<<"Nie moge wykonac tej operacji.";
-                    Sleep(2000);
+                    //Sleep(2000);
                     system("clear");
-                    system("cls");
+                    //system("cls");
                 }break;
                  
                 case '7': return 0; break;
                 default: 
                 {
                     cout<<"Podales cos spoza zakresu!";
-                    Sleep(2000);
+                    //Sleep(2000);
                     system("clear");
-                    system("cls");
+                    //system("cls");
                 }
             }
         }
