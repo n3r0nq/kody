@@ -10,7 +10,6 @@ int liczba[75];
 int main()
 {
     cout<<"Czesc. Jestem programem liczacym sume liczb"<<endl;
-    //cout<<"Jesli sie pomylisz napisz: 'c'"<<endl; //narazie nie wiem jak zrobic mechanizm cofania :-D
 
     for(int i=1; i<=75; i++)
     {
@@ -31,8 +30,7 @@ int main()
             suma[i]=suma[i-1] + liczba[i];
         }
 
-        //system("cls");
-        system("clear"); //linux
+        system("cls");
     }
 
         cout<<endl<<"Suma twoich liczb = "<<suma[75]<<endl;
