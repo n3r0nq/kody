@@ -1,8 +1,6 @@
 /*
  * petle.cpp
-    
  */
-
 
 #include <iostream>
 
@@ -13,7 +11,7 @@ int main(int argc, char **argv)
     
     for(int i=0; i<=100; i++) 
     {
-        //if(i%2 = 0) //nieparzyste
+        //if(i%2 = 0) //parzyste
         if(i%10 == 0) //pelne 10
         {
             cout<<i<<endl;
@@ -21,7 +19,6 @@ int main(int argc, char **argv)
         
         //cout<<'*'<<endl;
     }
-    
     
     return 0;
 }
