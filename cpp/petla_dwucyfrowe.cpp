@@ -18,9 +18,15 @@ int main(int argc, char **argv)
         cin>>m;
         cout<<"Podaj druga liczbe:";
         cin>>n;
-    } 
-    cout<<m<<endl;
-    cout<<n<<endl;
+    }
+    while(m<=n)
+    {
+        if(m%2 == 0 && m%3 == 0) 
+        {
+            cout<<m<<endl;
+        }
+        m++;
+    }
     
     return 0;
 }
