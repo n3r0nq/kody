@@ -1,6 +1,5 @@
 /*
- * petle_switch.cpp
- * Program pobiera numer miesiaca i wyswietla jego nazwe
+ * petle_znak.cpp
  */
 
 #include <iostream>
@@ -9,11 +8,11 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    char zn='0';
+    char zn='t';
     
     cout<<"Zgaduj!"<<endl<<endl;
     
-    while(zn !='t' && zn !='T' && zn !='n' && zn !='N' )
+    while(zn =='t' || zn =='T' || zn =='n' || zn =='N')
     {
         cout<<"Litere:";
         cin>>zn;
