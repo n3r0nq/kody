@@ -9,7 +9,7 @@ using namespace std;
 int odejmij(int a, int b);
 int dodaj(int a, int b);
 float pomnoz(float a, float b);
-float podziel(float a, float b);
+void podziel(int a, int b);
 
 int main(int argc, char **argv)
 {
@@ -47,7 +47,7 @@ int main(int argc, char **argv)
         }break;
         case 4: 
         {
-        cout<<"Iloraz= "<<podziel(a,b); 
+        podziel(a,b); 
         }break;
     }
    
@@ -66,13 +66,16 @@ float pomnoz(float a, float b)
 {
     return a*b;
 }
-
-float podziel(float a, float b)
+void podziel(int a, int b)
 {
+    float wynik=0;
     if(b==0)
     {
         cout<<"Nie dziel przez 0!"<<endl;
-        return 0;
-    }else
-    return a/b;
+
+    }else 
+    {
+        wynik=a/b;
+        cout<<"Iloraz= "<<wynik;
+    }
 }
