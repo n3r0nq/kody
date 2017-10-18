@@ -6,23 +6,10 @@
 
 using namespace std;
 
-int odejmij(int a, int b)
-{
-    return a-b;
-}
-int dodaj(int a, int b)
-{
-    return a+b;
-}
-float pomnoz(float a, float b)
-{
-    return a*b;
-}
-
-float podziel(float a, float b)
-{
-    return a/b;
-}
+int odejmij(int a, int b);
+int dodaj(int a, int b);
+float pomnoz(float a, float b);
+float podziel(float a, float b);
 
 int main(int argc, char **argv)
 {
@@ -65,4 +52,27 @@ int main(int argc, char **argv)
     }
    
     return 0;
+}
+
+int odejmij(int a, int b)
+{
+    return a-b;
+}
+int dodaj(int a, int b)
+{
+    return a+b;
+}
+float pomnoz(float a, float b)
+{
+    return a*b;
+}
+
+float podziel(float a, float b)
+{
+    if(b==0)
+    {
+        cout<<"Nie dziel przez 0!"<<endl;
+        return 0;
+    }else
+    return a/b;
 }
