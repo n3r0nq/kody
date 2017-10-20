@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//deklaracja funkcji
 int odejmij(int a, int b);
 int dodaj(int a, int b);
 float pomnoz(float a, float b);
@@ -53,6 +54,8 @@ int main(int argc, char **argv)
    
     return 0;
 }
+
+//funkcje
 
 int odejmij(int a, int b)
 {
