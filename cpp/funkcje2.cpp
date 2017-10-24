@@ -45,7 +45,7 @@ void zwieksz1(int liczba, int krok)
 */
 void zwieksz2(int liczba, int krok)
 {
-    liczba+=k;
+    liczba+=krok;
 }
 void zwieksz3(int &liczba, int &krok)
 {
