@@ -8,6 +8,10 @@
 
 using namespace std;
 
+//deklaracja funkcji
+void pobierzDane(int tab[],int ile);
+int sumuj(int tab[],int ile);
+float liczSrednia(int tab[],int ile);
 
 
 int main(int argc, char **argv)
@@ -18,22 +22,38 @@ int main(int argc, char **argv)
     cin>>rozmiar;
     
     int oceny[rozmiar];
-    int suma=0;
     
+    pobierzDane(oceny,rozmiar);
     
-    cout<<"Czesc! Licze srednia "<<rozmiar<<" ocen"<<endl;
-    
-    for(int i=0;i<rozmiar;i++)
-    {
-        cout<<"Podaj "<<i+1<<" ocene: ";
-        cin>>oceny[i];
-        
-        //cout<<oceny[i]<<endl;
-        suma+=oceny[i];
-    }
-    cout<<"Suma= "<<suma<<endl;
-    cout<<"Srednia= "<<float(suma)/float(rozmiar)<<endl;  
+    cout<<"Suma="<<sumuj(oceny,rozmiar)<<endl; 
+    cout<<"srednia="<<liczSrednia(oceny,rozmiar)<<endl; 
+    //cout<<"Srednia= "<<float(sumuj(oceny,rozmiar))/float(rozmiar)<<endl;  
    
     return 0;
+}
+
+//funkcje
+void pobierzDane(int tab[],int ile)
+{
+    cout<<"Czesc! Licze srednia "<<ile<<" ocen"<<endl;
+    for(int i=0;i<ile;i++)
+    {
+        cout<<"Podaj "<<i+1<<" liczbe: ";
+        cin>>tab[i];
+    }
+}
+int sumuj(int tab[],int ile)
+{
+    int suma=0;
+    for(int i=0;i<ile;i++)
+    {
+        suma+=tab[i];
+    }
+    
+    return suma;
+}
+float liczSrednia(int tab[],int ile)
+{
+    return (float)sumuj(tab,ile)/float(ile);
 }
 
