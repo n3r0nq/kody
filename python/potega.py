@@ -7,10 +7,11 @@
 
 def potega_it(podst,wykladnik):
     """Funkcja oblicza iteracyjnie potege l. naturalnej"""
-    wynik = float #?
+    wynik = int
     for i in range(wykladnik):
-        wynik = #wynik + (podst*wykladnik)
-        #podst = wynik
+        n=podstawa
+        wynik = podst*n
+        podst = wynik
     return wynik
 
 def main(args):
