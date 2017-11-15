@@ -4,7 +4,7 @@
 from random import randint
 
 def losuj(ileliczb,maksliczb):
-    liczby = []
+    liczby = []  # lista
     #for i in range(ileliczb):
     ile = 0  # ilosc wylosowanych liczb
     while ile<ileliczb:
@@ -29,18 +29,21 @@ def typuj(ileliczb):
 
 
 def main(args):
-    ileliczb = int(input("Ile liczb chcesz zgadnac?"))
-    maksliczb = int(input("Podaj gorny zkres: "))
+    try:
+        ileliczb = int(input("Ile liczb chcesz zgadnac?"))
+        maksliczb = int(input("Podaj gorny zkres: "))
 
-    while ileliczb > maksliczb:
-        ileliczb = int(input("Ile liczb chcesz zgadnac z %s? " % maksliczb))
-
+        while ileliczb > maksliczb:
+            ileliczb = int(input("Ile liczb chcesz zgadnac z %s " % maksliczb))
+    except ValueError:
+        print('Bledne dane! Uruchom ponownie.')
+        exit()
     liczby = losuj(ileliczb,maksliczb)
     typy = typuj(ileliczb)
     print(liczby)
     print(typy)
     trafione = set(liczby) & typy
-    print(trafione)
+    print("Trafione: ", len(trafione))
 
     return 0
 
