@@ -7,12 +7,12 @@
 using namespace std;
 
 //Deklaracja funkcji
-float poteguj(int wykladnik, int podstawa);
+float poteguj(float wykladnik, float podstawa);
 
 int main(int argc, char **argv)
 {
-    int wykladnik = 0;
-    int podstawa = 0;
+    float wykladnik = 0;
+    float podstawa = 0;
     
     cout<<"Podaj podstewe potegi: ";
     cin>>podstawa;
@@ -29,27 +29,13 @@ int main(int argc, char **argv)
 }
 
 //Funkcje
-float poteguj(int wykladnik, int podstawa)
+float poteguj(float wykladnik, float podstawa)
 {
-    double wynik=0;
-    int n=0;
+    float wynik = 1;
     
-    if(wykladnik == 0)
+    for(int i = 1; i<=wykladnik; i++)
     {
-        wynik=1;
-    }
-    else if(wykladnik == 1)
-    {
-        wynik=podstawa;
-    }
-    else
-    {
-        n=podstawa;
-        for(int i=1; i<wykladnik;i++)
-        {
-            wynik=(podstawa*n);
-            podstawa=wynik;
-        }
+        wynik=wynik*podstawa;
     }
     return wynik;
 }
