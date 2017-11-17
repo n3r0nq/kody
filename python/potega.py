@@ -8,18 +8,25 @@
 def potega_it(podst,wykladnik):
     """Funkcja oblicza iteracyjnie potege l. naturalnej"""
     wynik = 1
-    i=1
-    #for i in range(wykladnik):
-    while i<=n:
-        wynik = wynik*podstawa
-        i += 1
+    # i = 1
+    # while i <= wykladnik:
+    for i in range(wykladnik):
+        wynik = wynik * podst
+        #i = i + 1
     return wynik
 
 def main(args):
     podstawa = int(input("Podaj podstawe:"))
     wykladnik = int(input("Podaj wykladnik potegi:"))
 
-    potega_it(podstawa,wykladnik)
+    assert type(podstawa) == int
+    assert type(wykladnik) == int
+
+    assert potega_it(20, 0) == 1
+    assert potega_it(20, 1) == 20
+    assert potega_it(2, 3) == 8
+
+    print("Wynik: ", potega_it(podstawa,wykladnik))
 
     return 0
 
