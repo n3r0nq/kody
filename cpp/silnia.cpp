@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 }
 
 //Funkcje
-int poteguj(int n)
+int silnia(int n)
 {
     int wynik = 1;
     
