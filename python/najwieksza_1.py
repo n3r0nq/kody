@@ -7,12 +7,11 @@ def main(args):
     b = int(input('Podaj liczbe:'))
     c = int(input('Podaj liczbe:'))
 
-    m=int
-    if m < a
+    if m < a:
         m=a
-    if m < b
+    if m < b:
         m=b
-    if m < c
+    if m < c:
        m=c
     print(m)
     return 0
