@@ -19,6 +19,25 @@ def maksimum(lista):
     return max
 
 
+def minmax(lista):
+    lmax = []
+    lmin = []
+    index = 0
+
+    for i in range(int(len(lista) / 2)):
+        if lista[index] > lista[index + 1]:
+            lmax.append(lista[index])
+            lmin.append(lista[index + 1])
+        else:
+            lmin.append(lista[index])
+            lmax.append(lista[index + 1])
+        index += 2
+    print("Lista max: ", lmax)
+    print("Lista min: ", lmin)
+
+    return lmax, lmin
+
+
 def losuj(ile, zakres):
     lista = []
     for i in range(ile):
@@ -30,8 +49,13 @@ def main(args):
     ile = int(input("Ile liczb: "))
     zakres = int(input("Podaj zkres: "))
 
+    assert minimum([6, 8, 0, 9, 1, ]) == 0
+    assert maksimum([6, 8, 0, 9, 1, ]) == 9
+
     lista = losuj(ile, zakres)
     print(lista)
+
+    minmax(lista)
 
     print("Najmniejsza: ", minimum(lista))
     print("Najwieksza: ", maksimum(lista))
