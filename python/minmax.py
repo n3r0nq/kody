@@ -32,10 +32,11 @@ def minmax(lista):
             lmin.append(lista[index])
             lmax.append(lista[index + 1])
         index += 2
-    print("Lista max: ", lmax)
-    print("Lista min: ", lmin)
 
-    return lmax, lmin
+    print("Maksymalna: ", maksimum(lmax))
+    print("Minimalna: ", minimum(lmin))
+
+    return 0
 
 
 def losuj(ile, zakres):
@@ -57,8 +58,8 @@ def main(args):
 
     minmax(lista)
 
-    print("Najmniejsza: ", minimum(lista))
-    print("Najwieksza: ", maksimum(lista))
+    # print("Najmniejsza: ", minimum(lista))
+    # print("Najwieksza: ", maksimum(lista))
 
     return 0
 
