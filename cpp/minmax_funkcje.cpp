@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 
     cout<<"Podaj ile liczb: ";
     cin>>ile;
-    cout<<"Podaj zakres:";
+    cout<<"Podaj zakres: ";
     cin>>zakres;
 
     srand(time(NULL));
@@ -43,8 +43,8 @@ int main(int argc, char **argv)
         }
         index += 2;
 
-        cout<<"lmax: "<<lmax[i]<<endl;
-        cout<<"lmin: "<<lmin[i]<<endl;
+        //cout<<"lmax: "<<lmax[i]<<endl;
+        //cout<<"lmin: "<<lmin[i]<<endl;
     }
 
     int max = lmax[0];
