@@ -10,8 +10,8 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    int ile = 20;
-    int zakres = 50;
+    int ile=20;
+    int zakres=50;
     int lista[zakres];
     int lmax[zakres/2];
     int lmin[zakres/2];
@@ -42,9 +42,6 @@ int main(int argc, char **argv)
             lmin[i] = lista[index];
         }
         index += 2;
-
-        //cout<<"lmax: "<<lmax[i]<<endl;
-        //cout<<"lmin: "<<lmin[i]<<endl;
     }
 
     int max = lmax[0];

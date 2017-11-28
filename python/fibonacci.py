@@ -9,16 +9,18 @@ def fib_iter(n):
     F(1) = 1
     F(n) = F(n-2) + F(n-1) dla n>1
     """
-
-    i = 2
-    fib = []
-    fib[0] = 0
-    fib[1] = 1
-
-    for i in range(n):
-        fib[i] = fib[i-2] + fib[i-1]
-
-    return fib
+    a,b = (0,1)
+    if n == 0
+        print a
+        return a
+    elif n == 1
+        print b
+        return b
+    
+    for i in range(2,n):
+        b = a + b
+        a = b
+    return b
 
 
 def main(args):
