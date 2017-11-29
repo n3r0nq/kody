@@ -1,6 +1,5 @@
 /*
  * fib.cpp
-
  */
 
 #include <iostream>
@@ -11,7 +10,7 @@ using namespace std;
 int main(int argc, char **argv)
 {
     int ile=0;
-    int fib[100000];
+    long double fib[100000];
     
     fib[0] = 0;
     fib[1] = 1;
