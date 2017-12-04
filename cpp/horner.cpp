@@ -10,12 +10,12 @@ using namespace std;
 // W(x) = x (2x^2 + 3x + 5) + 4
 // W(x) = x ( x (2x +3) + 5) + 4 ( 3 mnożenia)
 
-float horner_it(int k, float tab_wsp[], float x)
+float horner_it(int st, float tab_wsp[], float x)
 {
     float wynik = tab_wsp[0];
-    for (int i = 1; i < k + 1; i++)
+    for (int i = 1; i < st + 1; i++)
     {
-        wynik = wynik * x + tbwsp[i];
+        wynik = wynik * x + tab_wsp[i];
     }
     return wynik;
 }
