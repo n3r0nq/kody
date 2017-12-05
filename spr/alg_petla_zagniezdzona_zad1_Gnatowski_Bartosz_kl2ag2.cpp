@@ -7,18 +7,16 @@
 
 using namespace std;
 
-int main(int argc, char **argv)
+void rysuj_prostokat(int n, int m)
 {
-    int n = 0;
-    int m = 0;
-    char zn = '#';
+    char wyp = '#';
+    char obr = '*';
     
-    cout<<"Podaj szerokosc: ";
-    cin>>n;
-    cout<<"Podaj wysokosc: ";
-    cin>>m;
-    cout<<"Jakim znakiem chcesz narysowac prostokat:";
-    cin>>zn;
+    cout<<"Jakim znakiem chcesz wypelnic prostokat: ";
+    cin>>wyp;
+    cout<<"Jakim znakiem chcesz obramowac prostokat: ";
+    cin>>obr;
+    
     
     for(int i=0;i<m;i++)
     {
@@ -26,19 +24,33 @@ int main(int argc, char **argv)
         {
             for(int j=0;j<=n-1;j++)
             {
-                cout<<'*';
+                cout<<obr;
             }
         }else 
         {
-            cout<<'*';
+            cout<<obr;
             for(int j=0;j<n-2;j++)
             {
-                cout<<zn;
+                cout<<wyp;
             }
-            cout<<'*';
+            cout<<obr;
         }
         cout<<endl;
     }
+}
+
+int main(int argc, char **argv)
+{
+    int n = 0;
+    int m = 0;
+    
+    cout<<"Podaj szerokosc: ";
+    cin>>n;
+    cout<<"Podaj wysokosc: ";
+    cin>>m;
+    
+    rysuj_prostokat(n,m);
+    
     return 0;
 }
 
