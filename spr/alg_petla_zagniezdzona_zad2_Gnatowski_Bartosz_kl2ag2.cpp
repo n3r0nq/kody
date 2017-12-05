@@ -9,22 +9,31 @@ using namespace std;
 
 void rysuj_prostokat(int n, int m)
 {
+    char wyp = '#';
+    char obr = '*';
+    
+    cout<<"Jakim znakiem chcesz wypelnic prostokat: ";
+    cin>>wyp;
+    cout<<"Jakim znakiem chcesz obramowac prostokat: ";
+    cin>>obr;
+    
+    
     for(int i=0;i<m;i++)
     {
         if(i==0 || i==(m-1))
         {
             for(int j=0;j<=n-1;j++)
             {
-                cout<<'*';
+                cout<<obr;
             }
         }else 
         {
-            cout<<'*';
+            cout<<obr;
             for(int j=0;j<n-2;j++)
             {
-                cout<<'#';
+                cout<<wyp;
             }
-            cout<<'*';
+            cout<<obr;
         }
         cout<<endl;
     }
