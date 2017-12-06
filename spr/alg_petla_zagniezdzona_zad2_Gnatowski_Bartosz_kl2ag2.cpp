@@ -28,7 +28,7 @@ void rysuj_prostokat(int n, int m)
             }
         }else 
         {
-            cout<<obr;
+        cout<<obr;
             for(int j=0;j<n-2;j++)
             {
                 cout<<wyp;
