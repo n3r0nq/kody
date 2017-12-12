@@ -4,6 +4,7 @@ using namespace std;
 
 void fib_iter(int n);
 void fib_iter2(int n);
+int fib_rek(int n);
 
 int main()
 {
@@ -13,9 +14,10 @@ int main()
    cout<<"Ile liczb fibonacciego chcesz uzyskac: ";
    cin>>ile;
    
-   cout<<"Na while czy for?"<<endl;
+   cout<<"Jak wykonac?"<<endl;
    cout<<"1. for"<<endl;
    cout<<"2. while"<<endl;
+   cout<<"3. rekurencyjnie"<<endl;
    cout<<"Wybor: ";
    cin>>wybor;
    
@@ -23,6 +25,13 @@ int main()
    {
        case 1: fib_iter(ile); break;
        case 2: fib_iter2(ile); break;
+       case 3: 
+        {
+            for(int i=0;i<ile;i++)
+            {
+                cout<<i+1<<" wyraz ciagu to: "<<fib_rek(i)<<endl;
+            }
+        }break;
    }
     
     return 0;
@@ -63,4 +72,12 @@ void fib_iter2(int n)
         i++;
         n--;
     }
+}
+int fib_rek(int n)
+{
+    if(n<2)
+    {
+        return 1;
+    }
+    else return fib_rek(n-2) + fib_rek(n-1);
 }

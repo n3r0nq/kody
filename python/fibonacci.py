@@ -51,7 +51,8 @@ def main(args):
 
     # fib_iter(ile)
     # fib_iter2(ile)
-    print(fib_rek(ile))
+    for i in range(ile):
+        print(i + 1, " wyraz ciagu to: ", fib_rek(i))
 
     return 0
 
