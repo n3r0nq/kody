@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//Deklaracja funckji
 void fib_iter(int n);
 void fib_iter2(int n);
 int fib_rek(int n);
@@ -38,9 +39,10 @@ int main()
 }
 
 //Funckje
+
 void fib_iter(int n)
 {
-    int a = 0;
+    long double a = 0;
     int b = 1;
     int tmp = 0;
     
@@ -79,5 +81,5 @@ int fib_rek(int n)
     {
         return 1;
     }
-    else return fib_rek(n-2) + fib_rek(n-1);
+    return fib_rek(n-2) + fib_rek(n-1);
 }

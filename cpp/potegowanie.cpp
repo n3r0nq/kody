@@ -7,12 +7,12 @@
 using namespace std;
 
 //Deklaracja funkcji
-float poteguj_it(float a, float n);
-float poteguj_rek(float a, float n);
+float poteguj_it(float a, int n);
+float poteguj_rek(float a, int n);
 
 int main(int argc, char **argv)
 {
-    float wykladnik = 0;
+    int wykladnik = 0;
     float podstawa = 0;
     
     cout<<"Podaj podstewe potegi: ";
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 }
 
 //Funkcje
-float poteguj_it(float a, float n)
+float poteguj_it(float a, int n)
 {
     float wynik = 1;
     
@@ -42,11 +42,11 @@ float poteguj_it(float a, float n)
     return wynik;
 }
 
-float poteguj_rek(float a, float n)
+float poteguj_rek(float a, int n)
 {
-	if(n == 0)
-		return 1;
-	return poteguj_rek(a, n-1) * a;
+    if(n == 0)
+        return 1;
+    return poteguj_rek(a, n-1) * a;
 }
 
 

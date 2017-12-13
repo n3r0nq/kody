@@ -36,8 +36,8 @@ int silnia_it(int n)
 }
 int silnia_rek(int n)
 {
-	if(n<2)
-		return 1;
-	return silnia_rek(n-1) * n;
+    if(n<2)
+        return 1;
+    return silnia_rek(n-1) * n;
 }
 
