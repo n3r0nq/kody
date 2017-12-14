@@ -20,6 +20,16 @@ float horner_it(int st, float tab_wsp[], float x)
     return wynik;
 }
 
+float horner_rek(int st, float tab_wsp[], float x)
+{
+    if(st == 0)
+    {
+        return tab_wsp[0];
+    }
+    return horner_rek(st-1, tab_wsp, x) * x + tab_wsp[st];
+}
+
+
 int main(int argc, char **argv)
 {
     int stopien = 3;
@@ -35,6 +45,7 @@ int main(int argc, char **argv)
     }
     
     cout << "Wartosc wielomianu: " << horner_it(stopien, tab_wsp, x) << endl;
+    cout << "Wartosc wielomianu_rek: " << horner_rek(stopien, tab_wsp, x) << endl;
     
     return 0;
 }

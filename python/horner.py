@@ -11,7 +11,7 @@ def horner_it(st, tab_wsp, x):
 
 def horner_rek(st, tab_wsp, x):
     if st == 0:
-        return tab_wsp[0] * x
+        return tab_wsp[0] # zamiast tab_wsp[0] * x <<< tu byl blad
     return horner_rek(st - 1, tab_wsp, x) * x + tab_wsp[st]
 
 
