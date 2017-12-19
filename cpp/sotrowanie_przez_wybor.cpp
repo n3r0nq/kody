@@ -21,6 +21,7 @@ void drukuj(int t[],int n)
     {
         cout<<t[i]<<" ";
     }
+    cout<<endl;
 }
 void zamien(int &a, int &b)
 {
@@ -51,6 +52,10 @@ int main(int argc, char **argv)
     int tab[ile];
     wypelnij(tab, ile, 20);
     drukuj(tab,ile);
+    
+    sort_wyb(tab,ile);
+    drukuj(tab,ile);
+    
     return 0;
 }
 
