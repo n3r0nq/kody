@@ -31,20 +31,36 @@ void zamien(int &a, int &b)
     a = b;
     b = temp;
 }
-void sort_wyb(int t[], int n)
+void sort_wyb_najmn(int t[], int n)
 {
     int k;
     for(int i=0;i<n;i++)
     {
-        k = i;
+        k=i;
         for(int j=i+1;j<n;j++)
         {
             if(t[j]<t[k])
             {
-                k=j; //najmniejszy w nieposortowanej czesci tabeli
+                k = j;
             }
-            zamien(t[i], t[k]);
         }
+        zamien(t[i], t[k]);
+    }
+}
+void sort_wyb_najw(int t[], int n)
+{
+    int k;
+    for(int i=0;i<n;i++)
+    {
+        k=n;
+        for(int j=i+1;j<n;j++)
+        {
+            if(t[j]>t[k])
+            {
+                k = j;
+            }
+        }
+        zamien(t[i], t[k]);
     }
 }
 
@@ -52,11 +68,33 @@ int main(int argc, char **argv)
 {
     const int ile=10;
     int tab[ile];
-    wypelnij(tab, ile, 20);
-    drukuj(tab,ile);
+    int wybor=0;
     
-    sort_wyb(tab,ile);
+    wypelnij(tab, ile, 20);
+    cout<<"TABELA: ";
     drukuj(tab,ile);
+    cout<<endl;
+    
+    cout<<"Jak posortowac?"<<endl;
+    cout<<"1. od najmniejszej"<<endl;
+    cout<<"2. od najwiekszej"<<endl<<endl;
+    cout<<"Wybor: ";
+    cin>>wybor;
+    
+    switch(wybor)
+    {
+        case 1:
+            {
+                sort_wyb_najmn(tab,ile);
+                drukuj(tab,ile);
+            }break;
+        case 2:
+            {
+                sort_wyb_najw(tab,ile);
+                drukuj(tab,ile);
+            }break;
+        default: break;
+    }
     
     return 0;
 }
