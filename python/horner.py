@@ -25,7 +25,7 @@ def main(args):
         tab_wsp.append(wsp)
 
     assert horner_it(stopien, [1, 2, 3, 4], 2) == 26
-    assert horner_rek(stopien, [1, 2, 3, 4], 2) == 34
+    assert horner_rek(stopien, [1, 2, 3, 4], 2) == 26
 
     print("Wartosc wielomianu_it: ", horner_it(stopien, tab_wsp, x))
     print("Wartosc wielomianu_rek: ", horner_rek(stopien, tab_wsp, x))
