@@ -14,23 +14,19 @@ def wypelnij(tab, n, m):
     return tab
 
 
-def sort_wyb_najm(tab, n):
-    for i in range(0, n):
-        k = i
-        j = i + 1
-        for j in range(j, n + 1):
-            if tab[j] < tab[k]:
-                tab[j], tab[k] = tab[k], tab[j]
+def bubble_sort_najm(tab, n):
+    for i in range(1, len(tab)):
+        for j in range(1, len(tab)):
+            if tab[j] < tab[j - 1]:
+                tab[j], tab[j - 1] = tab[j - 1], tab[j]
     return tab
 
 
-def sort_wyb_najw(tab, n):
-    for i in range(0, n):
-        k = i
-        j = i + 1
-        for j in range(j, n + 1):
-            if tab[j] > tab[k]:
-                tab[j], tab[k] = tab[k], tab[j]
+def bubble_sort_najw(tab, n):
+    for i in range(1, len(tab)):
+        for j in range(1, len(tab)):
+            if tab[j] > tab[j - 1]:
+                tab[j], tab[j - 1] = tab[j - 1], tab[j]
     return tab
 
 
@@ -39,8 +35,8 @@ def main(args):
     tab = [ile]
     max = int(input("Jaka maksymalna liczbe do wlozenia do tabeli: "))
     print("Tabela przed sortowaniem: ", wypelnij(tab, ile, max))
-    print("Tabela po sortowaniu_najm: ", sort_wyb_najm(tab, ile))
-    print("Tabela po sortowaniu_najw: ", sort_wyb_najw(tab, ile))
+    print("Tabela po sortowaniu_najm: ", bubble_sort_najm(tab, ile))
+    print("Tabela po sortowaniu_najw: ", bubble_sort_najw(tab, ile))
 
     return 0
 
