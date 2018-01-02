@@ -91,7 +91,43 @@ void bubble_sort_najw(int t[], int n)
         }
     }
 }
-
+//SORTOWANIE PRZEZ WSTAWIANIE
+void sort_wstaw_najm(int t[], int n)
+{
+    int el=0;
+    int k=0;
+    
+    for(int i=1;i<n;i++)
+    {
+        el = t[i];
+        k = i-1;
+        
+        while(k>=0 && t[k] > el)
+        {
+            t[k+1] = t[k];
+            k--;
+        }
+        t[k+1] = el;
+    }
+}
+void sort_wstaw_najw(int t[], int n)
+{
+    int el=0;
+    int k=0;
+    
+    for(int i=1;i<n;i++)
+    {
+        el = t[i];
+        k = i-1;
+        
+        while(k>=0 && t[k] < el)
+        {
+            t[k+1] = t[k];
+            k--;
+        }
+        t[k+1] = el;
+    }
+}
 int main(int argc, char **argv)
 {
     const int ile=10;
@@ -107,7 +143,9 @@ int main(int argc, char **argv)
     cout<<"1. od najmniejszej(sort_wyb)"<<endl;
     cout<<"2. od najwiekszej(sort_wyb)"<<endl;
     cout<<"3. od najmniejszej(bubble_sort)"<<endl;
-    cout<<"4. od najwiekszej(bubble_sort)"<<endl<<endl;
+    cout<<"4. od najwiekszej(bubble_sort)"<<endl;
+    cout<<"5. od najmniejszej(sort_wstaw)"<<endl;
+    cout<<"6. od najwiekszej(sort_wstaw)"<<endl<<endl;
     cout<<"Wybor: ";
     cin>>wybor;
     
@@ -131,6 +169,16 @@ int main(int argc, char **argv)
         case 4:
             {
                 bubble_sort_najw(tab,ile);
+                drukuj(tab,ile);
+            }break;
+        case 5:
+            {
+                sort_wstaw_najm(tab,ile);
+                drukuj(tab,ile);
+            }break;
+        case 6:
+            {
+                sort_wstaw_najw(tab,ile);
                 drukuj(tab,ile);
             }break;
         default: break;
