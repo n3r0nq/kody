@@ -37,6 +37,7 @@ int main(int argc, char **argv)
 {
     int ile = 8;
     int lista[ile];
+    // int lista [] = {3,5,6,7,8,9,1,3,4,0}
     
     lista[0]= 4; 
     lista[1]= 3; 
