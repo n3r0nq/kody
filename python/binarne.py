@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import math
+from math import floor
 
 
 def wyszukaj_liniowo(li, el):
@@ -11,19 +11,32 @@ def wyszukaj_liniowo(li, el):
     return -1
 
 
-def wyszukaj_bin(li, el):
+def wyszukaj_bin_it(li, el):
     lewy, prawy = 0, len(li) - 1
     while lewy < prawy:
-        srodek = math.floor((lewy + prawy) / 2)
-        if li[srodek] < el:
-            lewy = srodek + 1
-        else:
+        srodek = floor((lewy + prawy) / 2)
+        if el <= li[srodek]:
             prawy = srodek
+        else:
+            lewy = srodek + 1
 
     if li[lewy] == el:
         return lewy
     else:
         return -1
+
+
+def wyszukaj_bin_rek(l, p, li, el):
+    if l > p:
+        return -1
+
+    srodek = floor((l + p) / 2)
+    if el == li[srodek]:
+        return srodek
+    elif el < li[srodek]:
+        return wyszukaj_bin_rek(l, srodek - 1, li, el)
+    else:
+        return wyszukaj_bin_rek(srodek + 1, p, li, el)
 
 
 def main(args):
@@ -32,18 +45,33 @@ def main(args):
     print(lista)
 
     el = int(input("Jaki element chcesz wyszukac: "))
-    # print(wyszukaj_liniowo(lista, el))
-    # assert wyszukaj_liniowo(lista, 8) == -1
+    print("LINIOWO: ", wyszukaj_liniowo(lista, el))
+    assert wyszukaj_liniowo(lista, 8) == -1
 
-    assert wyszukaj_bin(lista, 8) == -1
-    assert wyszukaj_bin(lista, 3) == 4
-    assert wyszukaj_bin(lista, -4) == 0
-    assert wyszukaj_bin(lista, 4) == 6
+    assert wyszukaj_liniowo(lista, 8) == -1
+    assert wyszukaj_liniowo(lista, 3) == 4
+    assert wyszukaj_liniowo(lista, -4) == 0
+    assert wyszukaj_liniowo(lista, 4) == 6
+    assert wyszukaj_bin_it(lista, 8) == -1
+    assert wyszukaj_bin_it(lista, 3) == 4
+    assert wyszukaj_bin_it(lista, -4) == 0
+    assert wyszukaj_bin_it(lista, 4) == 6
+    assert wyszukaj_bin_rek(0, len(lista) - 1, lista, 8) == -1
+    assert wyszukaj_bin_rek(0, len(lista) - 1, lista, 3) == 4
+    assert wyszukaj_bin_rek(0, len(lista) - 1, lista, -4) == 0
+    assert wyszukaj_bin_rek(0, len(lista) - 1, lista, 4) == 6
 
-    if wyszukaj_bin(lista, el) == -1:
-        print("Brak elementu w zbiorze.")
+    if wyszukaj_bin_it(lista, el) == -1:
+        print("IT: Brak elementu w zbiorze.")
     else:
-        print("Szukana pozycja dla elementu ", "\'", el,"\'", " to: ", wyszukaj_bin(lista, el))
+        print("IT: Szukana pozycja dla elementu ", "\'", el,
+              "\'", " to: ", wyszukaj_bin_it(lista, el))
+
+    if wyszukaj_bin_rek(0, len(lista) - 1, lista, el) == -1:
+        print("REK: Brak elementu w zbiorze.")
+    else:
+        print("REK: Szukana pozycja dla elementu ", "\'", el,
+              "\'", " to: ", wyszukaj_bin_rek(0, len(lista) - 1, lista, el))
 
     return 0
 
