@@ -46,8 +46,8 @@ def main(args):
 
     el = int(input("Jaki element chcesz wyszukac: "))
     print("LINIOWO: ", wyszukaj_liniowo(lista, el))
-    assert wyszukaj_liniowo(lista, 8) == -1
 
+    assert wyszukaj_liniowo(lista, 8) == -1
     assert wyszukaj_liniowo(lista, 8) == -1
     assert wyszukaj_liniowo(lista, 3) == 4
     assert wyszukaj_liniowo(lista, -4) == 0
