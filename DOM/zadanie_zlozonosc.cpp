@@ -9,7 +9,7 @@ using namespace std;
 
 void wypisz_nieparzyste(int n)
 {
-    for(int i=1;i<=n;i+=2)
+    for(int i=1;i<n;i+=2)
     {
         cout<<i<<endl;
     }
