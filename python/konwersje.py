@@ -27,6 +27,7 @@ def other2dec(liczba, podstawa):
     for i in liczba:
         if not i.isdigit():
             liczba10 += (ord(i.upper()) - 55) * (podstawa ** potega)
+            # liczba10 += (ord(i) - 55) * (podstawa ** potega)
             # ** - potega
         else:
             liczba10 += int(i) * (podstawa ** potega)
@@ -53,7 +54,7 @@ def zamiana2():
         podstawa = int(input("Podaj podstawe w jakiej zapisales liczbe: "))
     if podstawa > 9:
         for i in liczba:
-            if ord(i) > 70:
+            if ord(i.upper()) > 70:
                 print("Zły format danych wejsciowych")
                 return 0
     else:
