@@ -7,7 +7,7 @@ from __future__ import division
 def main(args):
     reszty = []
     liczba = int(input("Podaj liczbe(dec): "))
-    podstawa = int(input("Podaj podstawe(dec): "))
+    podstawa = int(input("Podaj podstawe: "))
 
     while liczba > 0:
         reszta = liczba % podstawa

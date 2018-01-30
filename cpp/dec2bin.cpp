@@ -14,8 +14,8 @@ int main(int argc, char **argv)
     char znakB = 'B';
     int l14 = 65;
     int l15 = 66;
-    cout<< (int)znakA <<(int)znakB <<endl;
-    cout<<(char)l14 << (char)l15<<endl;
+    //~cout<< (int)znakA <<(int)znakB <<endl;
+    //~cout<<(char)l14 << (char)l15<<endl;
     
     int n = 0; //120 > 1111000
     int p = 2;
