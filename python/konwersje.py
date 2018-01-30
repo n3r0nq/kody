@@ -9,9 +9,8 @@ def dec2other(liczba10, podstawa):
     while liczba10 != 0:
         reszta = liczba10 % podstawa
         if reszta > 9:
-            reszty.append(chr(reszta + 55))
-        else:
-            reszty.append(str(reszta))
+            reszta = chr(reszta + 55)
+        reszty.append(str(reszta))
         liczba10 = int(liczba10 / podstawa)
 
     reszty.reverse()
@@ -26,8 +25,11 @@ def other2dec(liczba, podstawa):
     potega = len(liczba) - 1
 
     for i in liczba:
-        pass
-        liczba10 += int(i) * (podstawa ** potega)  # ** - potega
+        if not i.isdigit():
+            liczba10 += (ord(i.upper()) - 55) * (podstawa ** potega)
+            # ** - potega
+        else:
+            liczba10 += int(i) * (podstawa ** potega)
         potega -= 1
 
     return liczba10
@@ -48,8 +50,18 @@ def zamiana2():
     liczba = input("Podaj liczbę: ")
     podstawa = 0
     while podstawa < 2 or podstawa > 16:
-        podstawa = int(input("Podaj liczbę: "))
-    # pass
+        podstawa = int(input("Podaj podstawe w jakiej zapisales liczbe: "))
+    if podstawa > 9:
+        for i in liczba:
+            if ord(i) > 70:
+                print("Zły format danych wejsciowych")
+                return 0
+    else:
+        for i in liczba:
+            if int(i) >= podstawa:
+                print("Liczba nie moze skladac sie z cyfr > podstawy")
+                return 0
+
     print("Wynik konwersji: {}({}) = {}(10)".format(
         liczba, podstawa, other2dec(liczba, podstawa)))
     # {} placeholder
