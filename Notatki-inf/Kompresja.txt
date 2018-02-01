@@ -15,17 +15,16 @@ SOS: 000111000 *** - - - ***
 
 == KOMPRESJA BEZSTRATNA ==
 
-== np. ==
-
 == test zapisany (.zim, .rar, .7z, .zip, .pptx,), ==
-
 == formaty graficzne(.bmp, .png) ==
+== audio (.FLAC, .LPAC, .RKAU ) ==
 
 
 Archiwum – plik otrzymywany w procesie archiwizacji (często łączonej z kompresją) danych. Archiwa przygotowywane są przez programy archiwizujące. Celem archiwizacji jest umieszczenie wybranych plików w jednym, dużym pliku, zwanym archiwum. Obecnie, bardzo często łączy się archiwizowanie z kompresją, co powoduje także otrzymanie mniejszego rozmiaru archiwum wyjściowego, w porównaniu z sumą rozmiarów plików wejściowych.
 
 == KOMPRESJA STRATNA np. multimedia (.jpeg, .jpg) ==
 
+== audio (.mp3, .mpeg, .aac, .wav) ==
 Formaty wideo:
 matroska (.mkv)
 .mp4
