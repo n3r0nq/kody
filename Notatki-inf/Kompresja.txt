@@ -54,9 +54,12 @@ KOD MORSA - przyklad algorytmu statystycznego
 
 <od pierwszego do ostatniego wystapienia(poczatek), ilosc znakow powtarzajacych sie>
 The rain in Spain falls mainly on the plain. ⇒ 44 znaki
-The rain <3, 3>Sp<9,3> falls m<11, 3>ly on t<34,3>pl<15,3>. ⇒ 
+The rain __<3, 3>__Sp__<9,3>__ falls m__<11, 3>__ly on t__<34,3>__pl__<15,3>__. ⇒ 34
+
+Rc = 34 / 44 * 100 = 77,27%
 
 Rc = Vk / Vnk * 100 (wspolczynnik kompresji = skompresowane / nieskompresowane)
+
 ile znakow  ⇒ 6 bitow
 długość ciągu ⇒ 2 bity
 
