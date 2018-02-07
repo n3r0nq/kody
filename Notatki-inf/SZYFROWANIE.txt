@@ -15,3 +15,18 @@ Do odszyfrowania szyfrogramu potrzebny jest:
 ====== Rodzaje szyfrów ======
 
 ==== Podstawieniowe ====
+Szyfr Cezara
+
+== Przestawieniowe ==
+Zapkis tekstu w wierszach o ustalonej długości.
+
+Klucz to ilość kolumn, na które dzielimy tekst.
+
+TOBEORNOTTOBETHATISTHEQUESTIONAND
+
+TOBEORNOTT
+OBETHATIST
+HEQUESTION
+AND.......
+
+TOHAOBENBEQDETU.OHE.RAS.NTT.OII.TSO.TTN.
