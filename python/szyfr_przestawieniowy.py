@@ -8,15 +8,27 @@ def szyfruj(tekst, klucz):
 
     if reszta:
         tekst += (klucz - reszta) * "."
-    print(tekst)
 
-    for i in range(klucz):
-        for j in range(int(len(tekst) / klucz)):
+    for i in range(klucz): # 0-9
+        # print("Wydrukowane i: ", i)
+        for j in range(int(len(tekst) / klucz)): # 0-3
+            # print("j: ", j)
             szyfrogram += tekst[i + j * klucz]
-
     return szyfrogram
 
-#deeszyfracja
+
+def deszyfruj(szyfrogram, klucz):
+    tekst = ""
+    for i in range(int(len(szyfrogram) / klucz)): # 0-3
+        for j in range(klucz): # 0-9
+            # print(j)
+            # print("i=", i, " + ", "klucz=", int(len(szyfrogram) / klucz), " * ", "j=", j, " rowna sie: ", i + (j * int(len(szyfrogram) / klucz)) )
+            # 20 minut sie zastanawiam czego zly wynik, a tu "i" i "j" pomylilem w rownaniu na odwrot XD
+            tekst += szyfrogram[i + (j * int(len(szyfrogram) / klucz))]
+            tekst = tekst.replace(".", "")
+
+    return tekst
+
 
 def main(args):
     tekst = input("Podaj tekst: ")
@@ -27,8 +39,9 @@ def main(args):
         klucz = int(input("Podaj klucz: "))
 
     szyfrogram = szyfruj(tekst, klucz)
-    print(szyfrogram)
-    # print(deszyfruj(szyfrogram, klucz))
+    print("Zaszyfrowany: ", szyfrogram)
+    deszyfrowany = deszyfruj(szyfrogram, klucz)
+    print("Deszyfrowany: ", deszyfrowany)
 
     return 0
 

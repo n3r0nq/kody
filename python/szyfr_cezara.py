@@ -28,10 +28,10 @@ def deszyfruj(szyfrogram, klucz):
         ascii = ord(i) - klucz
         if ord(i) == 32:
             ascii = 32
-        if ascii > 90 and ascii < 97:
+        if ascii > 90 and ascii < 97 or ascii > 122:
             ascii -= 26
-        elif ascii > 122:
-            ascii -= 26
+        # elif ascii > 122:
+        #     ascii -= 26
         tekst += chr(ascii)
 
     return tekst
