@@ -16,6 +16,7 @@ Do odszyfrowania szyfrogramu potrzebny jest:
 
 ==== Podstawieniowe ====
 Szyfr Cezara
+Szyfr Vigenère’a
 
 == Przestawieniowe ==
 Zapkis tekstu w wierszach o ustalonej długości.

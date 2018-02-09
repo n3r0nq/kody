@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# TOBEORNOTTOBETHATISTHEQUESTIONAND
 
 
 def szyfruj(tekst, klucz):
@@ -9,9 +10,9 @@ def szyfruj(tekst, klucz):
     if reszta:
         tekst += (klucz - reszta) * "."
 
-    for i in range(klucz): # 0-9
+    for i in range(klucz):  # 0-9
         # print("Wydrukowane i: ", i)
-        for j in range(int(len(tekst) / klucz)): # 0-3
+        for j in range(int(len(tekst) / klucz)):  # 0-3
             # print("j: ", j)
             szyfrogram += tekst[i + j * klucz]
     return szyfrogram
@@ -19,11 +20,10 @@ def szyfruj(tekst, klucz):
 
 def deszyfruj(szyfrogram, klucz):
     tekst = ""
-    for i in range(int(len(szyfrogram) / klucz)): # 0-3
-        for j in range(klucz): # 0-9
+    for i in range(int(len(szyfrogram) / klucz)):  # 0-3
+        for j in range(klucz):  # 0-9
             # print(j)
             # print("i=", i, " + ", "klucz=", int(len(szyfrogram) / klucz), " * ", "j=", j, " rowna sie: ", i + (j * int(len(szyfrogram) / klucz)) )
-            # 20 minut sie zastanawiam czego zly wynik, a tu "i" i "j" pomylilem w rownaniu na odwrot XD
             tekst += szyfrogram[i + (j * int(len(szyfrogram) / klucz))]
             tekst = tekst.replace(".", "")
 
