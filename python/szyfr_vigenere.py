@@ -4,8 +4,8 @@
 
 def szyfruj(tekst, haslo):
     szyfrogram = []
-    litery = 'AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSTUVWXYZŹŻ'
-    # litery = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    # litery = 'AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSTUVWXYZŹŻ'
+    litery = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
     litera_hasla = 0
 
@@ -15,7 +15,8 @@ def szyfruj(tekst, haslo):
         if index != -1:  # jesli litera z tekstu nie znalazla sie w alfabecie
             index += litery.find(haslo[litera_hasla])
             # jesli wyjdziemy poza 26(litery alfabetu) to dzielimy modulo przez 26 i dodajemy reszte
-            index %= 34
+            index %= 26
+            # index %= 34 # dla alfabetu polskiego
 
             szyfrogram.append(litery[index])
             litera_hasla += 1  # przechodzimy do kolejnej litery w hasle
@@ -29,15 +30,16 @@ def szyfruj(tekst, haslo):
 
 def deszyfruj(szyfrogram, haslo):
     tekst = []
-    litery = 'AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSTUVWXYZŹŻ'
-    # litery = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    # litery = 'AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSTUVWXYZŹŻ'
+    litery = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     litera_hasla = 0
 
     for i in szyfrogram:
         index = litery.find(i)
         if index != -1:
             index -= litery.find(haslo[litera_hasla])
-            index %= 34
+            index %= 26
+            # index %= 34 # dla alfabetu polskiego
 
             tekst.append(litery[index])
             litera_hasla += 1
@@ -55,8 +57,8 @@ def main(args):
 
     szyfrogram = szyfruj(tekst.upper(), haslo.upper())
 
-    print(szyfrogram)
-    print(deszyfruj(szyfrogram, haslo))
+    print("Zaszyfrowane: ", szyfrogram)
+    print("Deszyfrowane: ", deszyfruj(szyfrogram, haslo))
 
     return 0
 # =ZNAK(JEŻELI(WIERSZ(A1)+KOLUMNA(A1)+63>90;WIERSZ(A1)+KOLUMNA(A1)+63-26;WIERSZ(A1)+KOLUMNA(A1)+63))
