@@ -54,8 +54,10 @@ def deszyfruj(szyfrogram, haslo):
 def main(args):
     tekst = input("Podaj tekst: ")
     haslo = input("Podaj hasło: ")
+    tekst = tekst.upper()
+    haslo = haslo.upper()
 
-    szyfrogram = szyfruj(tekst.upper(), haslo.upper())
+    szyfrogram = szyfruj(tekst, haslo)
 
     print("Zaszyfrowane: ", szyfrogram)
     print("Deszyfrowane: ", deszyfruj(szyfrogram, haslo))
