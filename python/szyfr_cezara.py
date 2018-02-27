@@ -44,7 +44,8 @@ def main(args):
     tekst = input("Podaj tekst: ")
     klucz = int(input("Podaj klucz: "))
     szyfrogram = szyfruj(tekst, klucz)
-
+    # szyfrogram = "VCBIU FHCDUD MHVW SURVWB"
+    # klucz = 3
     print(szyfrogram)
     print(deszyfruj(szyfrogram, klucz))
 

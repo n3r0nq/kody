@@ -31,3 +31,19 @@ HEQUESTION
 AND.......
 
 TOHA OBEN BEQD ETU. OHE. RAS. NTT. OII. TSO. TTN.
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+VCBIU FHCDUD MHVW SURVWB
+
+SZYFR CEZARA JEST PROSTY
+
+== Asymetryczne ==
+-wczytywanie stron internetowych
+protokuł **https, ssl, tls**
+-tożsamość serwera to **certifikat**
+
+**Preety Good Privacy (PGP) -** narzedzie do szyfrowania poczty elektornicznej
+
+**Klucz publiczny** - ciag cyfr ktory podajemy do publicznych wiadmosci
+**Algorytm RSA**
+**SSH**
