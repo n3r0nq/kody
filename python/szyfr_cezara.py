@@ -22,17 +22,19 @@ def szyfruj(tekst, klucz):
     return szyfrogram
 
 
-def deszyfruj(szyfrogram, klucz):
+def deszyfruj(szyfrogram, klucz): # troche duzo ifow, ale narazie nwm jak to przyspieszyc i uproscic. wazne ze dziala
     tekst = ""
     for i in szyfrogram:
         ascii = ord(i) - klucz
         # print(i, ascii)
         if ord(i) == 32:
             ascii = 32
-        if ascii < 65 and ascii != 32 and ascii > 57 and ascii < 48:
+        if ascii < 65 and ascii != 32:
             ascii += 26
         if ascii > 90 and ascii < 97 and ascii != 32:
             ascii += 26
+        if i.isdigit():
+            ascii -= 26
         # print(i, ascii)
         tekst += chr(ascii)
 
