@@ -26,12 +26,14 @@ def deszyfruj(szyfrogram, klucz):
     tekst = ""
     for i in szyfrogram:
         ascii = ord(i) - klucz
+        # print(i, ascii)
         if ord(i) == 32:
             ascii = 32
-        if ascii > 90 and ascii < 97 or ascii > 122:
-            ascii -= 26
-        # elif ascii > 122:
-        #     ascii -= 26
+        if ascii < 65 and ascii != 32 and ascii > 57 and ascii < 48:
+            ascii += 26
+        if ascii > 90 and ascii < 97 and ascii != 32:
+            ascii += 26
+        # print(i, ascii)
         tekst += chr(ascii)
 
     return tekst

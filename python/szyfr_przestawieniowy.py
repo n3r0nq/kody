@@ -25,7 +25,7 @@ def deszyfruj(szyfrogram, klucz):
             # print(j)
             # print("i=", i, " + ", "klucz=", int(len(szyfrogram) / klucz), " * ", "j=", j, " rowna sie: ", i + (j * int(len(szyfrogram) / klucz)) )
             tekst += szyfrogram[i + (j * int(len(szyfrogram) / klucz))]
-            tekst = tekst.replace(".", "")
+            # tekst = tekst.replace(".", "")
 
     return tekst
 

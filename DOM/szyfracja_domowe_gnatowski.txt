@@ -1,0 +1,9 @@
+1) cezar:
+szyfrogram: Gfwytxe Lsfytbxpn zwtietsd 5736637555 wtpz b Xfsitrnjwez
+klucz: 5;
+2) przestawieniowy:
+szyfrogram: BoGoion2.0k deasnw dy.2 uSorrzasuz 10r amzt tkro010owniu
+klucz: 7;
+3) vigenere:
+szyfrogram: IAJXZCN NNSXZGGRI MVZNNVNQ 02.11.2000 VZUI D SSROYAPEJDF
+klucz: haselko;
