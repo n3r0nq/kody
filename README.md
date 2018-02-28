@@ -4,4 +4,4 @@ Zapewne wiekszosc to C++
 
 //ENG
 My first repository. IT lessons;
-Mainly C++
+Mainly C++ 
