@@ -41,7 +41,7 @@ def deszyfruj(szyfrogram, klucz):
             ascii += 26
         # print(i, ascii)
         if i != "." and ascii == 46:  # to niweluje buga sprawiajacego,
-                                     # że 8 => "RS" gdyz linia 37 go powoduje
+                                      # że 8 => "RS" gdyz linia 37 go powoduje
             ascii += 26
         # print(i, ascii)
 
@@ -65,7 +65,7 @@ def main(args):
     klucz = int(input("Podaj klucz: "))
 
     while klucz > 6:
-         klucz = int(input("Podaj klucz: "))
+        klucz = int(input("Podaj klucz: "))
 
     szyfrogram = szyfruj(tekst, klucz)
     # szyfrogram = "VCBIU FHCDUD MHVW SURVWB"
