@@ -38,9 +38,9 @@ VCBIU FHCDUD MHVW SURVWB
 SZYFR CEZARA JEST PROSTY
 
 == Asymetryczne ==
--wczytywanie stron internetowych
-protokuł **https, ssl, tls**
--tożsamość serwera to **certifikat**
+- wczytywanie stron internetowych
+- protokuł **https, ssl, tls**
+- tożsamość serwera to **certifikat**
 
 **Preety Good Privacy (PGP) -** narzedzie do szyfrowania poczty elektornicznej
 
