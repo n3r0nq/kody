@@ -37,9 +37,10 @@ def deszyfruj(szyfrogram, klucz):
 
 
 def main(args):
-    szyfrogram = input("Podaj szyfrogram: ")
-    klucz = int(input("Podaj klucz: "))
-
+    # szyfrogram = input("Podaj szyfrogram: ")
+    # klucz = int(input("Podaj klucz: "))
+    szyfrogram = "QKIAWAACYMU"
+    klucz = 2
     print("Zaszyfrowane: ", szyfrogram)
     print("Deszyfrowane: ", deszyfruj(szyfrogram, klucz))
 

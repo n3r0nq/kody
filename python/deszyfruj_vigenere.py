@@ -25,9 +25,10 @@ def deszyfruj(szyfrogram, haslo):
 
 
 def main(args):
-    szyfrogram = input("Podaj szyfrogram: ")
-    haslo = input("Podaj haslo: ")
-
+    # szyfrogram = input("Podaj szyfrogram: ")
+    # haslo = input("Podaj haslo: ")
+    szyfrogram = "QAKCIYAMWUA."
+    haslo = "INFORMATYKA"
     szyfrogram.upper()
     haslo.upper()
 

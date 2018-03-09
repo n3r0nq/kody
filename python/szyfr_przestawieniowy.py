@@ -3,19 +3,19 @@
 # TOBEORNOTTOBETHATISTHEQUESTIONAND
 
 
-def szyfruj(tekst, klucz):
-    szyfrogram = ""
-    reszta = len(tekst) % klucz
+# def szyfruj(tekst, klucz):
+#     szyfrogram = ""
+#     reszta = len(tekst) % klucz
 
-    if reszta:
-        tekst += (klucz - reszta) * "."
+#     if reszta:
+#         tekst += (klucz - reszta) * "."
 
-    for i in range(klucz):  # 0-9
-        # print("Wydrukowane i: ", i)
-        for j in range(int(len(tekst) / klucz)):  # 0-3
-            # print("j: ", j)
-            szyfrogram += tekst[i + j * klucz]
-    return szyfrogram
+#     for i in range(klucz):  # 0-9
+#         # print("Wydrukowane i: ", i)
+#         for j in range(int(len(tekst) / klucz)):  # 0-3
+#             # print("j: ", j)
+#             szyfrogram += tekst[i + j * klucz]
+#     return szyfrogram
 
 
 def deszyfruj(szyfrogram, klucz):
@@ -31,14 +31,15 @@ def deszyfruj(szyfrogram, klucz):
 
 
 def main(args):
-    tekst = input("Podaj tekst: ")
+    # tekst = input("Podaj tekst: ")
 
-    klucz = int(input("Podaj klucz: "))
-    # while (2 * klucz > len(tekst)):
-    while klucz > (0.5 * len(tekst)):
-        klucz = int(input("Podaj klucz: "))
-
-    szyfrogram = szyfruj(tekst, klucz)
+    # klucz = int(input("Podaj klucz: "))
+    # # while (2 * klucz > len(tekst)):
+    # while klucz > (0.5 * len(tekst)):
+    #     klucz = int(input("Podaj klucz: "))
+    szyfrogram = "QKIAWAACYMU."
+    klucz = 2
+    # szyfrogram = szyfruj(tekst, klucz)
     print("Zaszyfrowany: ", szyfrogram)
     deszyfrowany = deszyfruj(szyfrogram, klucz)
     print("Deszyfrowany: ", deszyfrowany)
