@@ -32,7 +32,7 @@ W Win dopuszczalne 4 a nawet 5.
 **h** (hiden) - ukryty
 **s** (system) - systemowy
 
-**DoS** obsługiwal jednynie 640KB pamieci, nie mozna bylo zaladowac pliku [[+64KB]]
+**DoS** obsługiwal jednynie 640KB pamieci, nie mozna bylo zaladowac pliku +64KB
 Dos wykorzystywal tryb rzeczywisty procesora
 
 ==== Interface graficzny: ====
