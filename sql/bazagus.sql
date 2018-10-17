@@ -12,13 +12,13 @@ CREATE TABLE miasta (
 );
 
 -- sqlite3 nazwa.db < nazwa.sql
--- sqlite nazwa.db
+-- sqlite3 nazwa.db
 -- sqlite>.table - wyswietla tabele
 -- sqlite>.schema - wyswietla klauzule SQL
 -- sqlute>.quit - wychodzenie z interpretera
 
 CREATE TABLE dane_demograficzne(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER,
     liczba_mieszkancow INTEGER,
     liczba_kobiet INTEGER,
     grupa_wiekowa TEXT(15),
