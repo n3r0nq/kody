@@ -5,7 +5,7 @@ import sqlite3
 
 def kwerenda1(cur):
     cur.execute("""
-        SELECT * FROM nazwiska INNER JOIN oceny ON nazwiska.nr_ucznia = oceny.nr_ucznia
+        SELECT * FROM uczniowie
     """)
 
     # SELECT * FROM nazwiska INNER JOIN dane_osobowe ON nazwiska.nr_ucznia = dane_osobowe.nr_ucznia
@@ -21,9 +21,9 @@ def kwerenda1(cur):
 def main(args):
     # KONFIGURACJA ############
     baza = 'uczniowie'
-    tabele = ['nazwiska', 'dane_osobowe', 'oceny']
-    roz = '.txt'
-    naglowki = True  # czy pliki zawieraja naglowki
+    tabele = ['uczniowie', 'klasy', 'przedmioty', 'oceny']
+    roz = '.csv'
+    naglowki = False
     ###########################
     con = sqlite3.connect(baza + '.db')  # połączenie
     cur = con.cursor()  # obiekt kursora
