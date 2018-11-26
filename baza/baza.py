@@ -21,53 +21,60 @@ def czytaj_dane(plik, separator=","):
     if not czy_jest(plik):
         return dane
 
-    with open(plik, 'r', newline='', encoding='utf-8') as plikcsv:
-        tresc = csv.reader(plikcsv, delimiter=separator)
+    with open(plik, newline='', encoding='utf-8') as plikcsv:
+        tresc = csv.reader(plikcsv, delimiter=separator, skipinitialspace=True)
         for rekord in tresc:
-            dane.append(tuple(rekord))
+            dane.append(rekord)
+
     return dane
 
 
 def ile_kolumn(cur, tab):
-    """F. liczy i zwraca liczbÄ kolumn w podanej tabeli"""
-    licznik = 0
+    """zlicza i zwraca liczbę kolumn w podanej tabeli"""
+    i = 0
     for kol in cur.execute("PRAGMA table_info('" + tab + "')"):
-        licznik += 1
-    return licznik
+        i += 1
+    return i
 
 
 def main(args):
-    # KONFIGURACJA #####################
-    baza = 'uczniowie'
+    ### KONFIGURACJA ###
+    baza_nazwa = 'uczniowie'
     tabele = ['uczniowie', 'klasy', 'przedmioty', 'oceny']
     roz = '.csv'
-    naglowki = False  # czy pliki zawiera naglowki
-    ####################################
-    con = sqlite3.connect(baza + '.db')  # polaczenie
-    cur = con.cursor()  # obiekt kursora
+    naglowki = False
+    ####################
 
-    if not czy_jest(baza + '.sql'):
-        return 0
+    con = sqlite3.connect(baza_nazwa + '.db')
+    cur = con.cursor()  # obiekt tzw. kursora
 
-    with open(baza + '.sql', 'r') as plik:
+    if not czy_jest(baza_nazwa + '.sql'):
+        return
+
+    with open(baza_nazwa + '.sql', 'r') as plik:
         cur.executescript(plik.read())
 
     for tab in tabele:
-        ile = ile_kolumn(cur, tab)
+        ile = ile_kolumn(cur, tab)  # liczba kolumn w tabeli
         dane = czytaj_dane(tab + roz, separator=',')
         ile_d = len(dane[0])
+
         if ile > ile_d:
-            dane2 = []  # lista pomocnicza
+            dane2 = []  # tymczasowa lista
             for r in dane:
                 r.insert(0, None)
                 dane2.append(r)
             dane = dane2
-        ile = len(dane[0])
+
         if naglowki:
             dane.pop(0)  # usuwamy rekord z nagłówkami kolumn
 
-        cur.executemany('INSERT INTO ' + tab + ' VALUES(' +
-                        ','.join(['?'] * ile) + ')', dane)
+        ile = len(dane[0])
+        cur.executemany('INSERT INTO ' +
+                        tab +
+                        ' VALUES(' +
+                        ','.join(['?'] * ile) +
+                        ')', dane)
 
     con.commit()
     con.close()
@@ -76,4 +83,4 @@ def main(args):
 
 if __name__ == '__main__':
     import sys
-    sys.exit(main(sys.argv))
+sys.exit(main(sys.argv))
