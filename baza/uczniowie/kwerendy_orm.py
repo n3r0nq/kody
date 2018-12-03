@@ -45,13 +45,66 @@ def kw10():
     for obj in query:
         print(obj.przedmiot.przedmiot, obj.ilu)
 
-def kw11():
-    """ suma wszystkich ocen """
 
+def kw11():
+    """ Po ile ocen mają uczniowie """
+    query = (Ocena
+             .select(fn.COUNT(Ocena.ocena).ALIAS('ilu'), Ocena.uczen.nazwisko)
+             .join(Uczen)
+             .group_by(Uczen)
+             .order_by(SQL('ilu').desc())
+             )
+
+    for obj in query:
+        print(obj.uczen.nazwisko, obj.ilu)
+
+
+def kw12():
+    """ srednie ocen ucznow """
+    query = (Ocena
+             .select(fn.AVG(Ocena.ocena).alias('srednia'), Ocena.uczen.nazwisko)
+             .join(Uczen)
+             .group_by(Uczen)
+             .order_by(SQL('srednia').desc())
+             )
+
+    for obj in query:
+        print(obj.uczen.nazwisko, round(obj.srednia, 2))
+
+
+def kw13():
+    """ srednie ocen ucznia Szymczak z przedmiotow """
+    query = (Ocena
+             .select(Ocena.uczen.nazwisko, fn.AVG(Ocena.ocena).alias('srednia'), Ocena.przedmiot.przedmiot)
+             .join(Uczen)
+             .join_from(Ocena, Przedmiot)
+             .where(Ocena.uczen.nazwisko == 'Szymczak')
+             .group_by(Ocena.przedmiot.przedmiot)
+             .order_by(SQL('srednia').asc())
+             )
+
+    for obj in query:
+        print(obj.uczen.nazwisko, obj.przedmiot.przedmiot, round(obj.srednia, 2))
+
+
+def kw14():
+    """ ilu uczniow ma srednia powyzej 3.6 z WF? """
+    query = (Ocena
+             .select(Ocena.uczen.nazwisko, fn.AVG(Ocena.ocena).alias('srednia'))
+             .join(Uczen)
+             .join_from(Ocena, Przedmiot)
+             .where(Ocena.przedmiot.przedmiot == 'WF')
+             .group_by(Ocena.uczen.nazwisko)
+             )
+    query = [obj for obj in query if obj.srednia > 3.5]
+    for obj in query:
+        # if(obj.srednia>3.5):
+        print(obj.uczen.nazwisko, round(obj.srednia, 2))
+    print('Liczba uczniow:', len(query))
 
 def main(args):
     baza.connect()  # połączenie z bazą
-
+    kw14()
     # kwerendy = [
     #     "Uczen.select()",
     #     "Uczen.select().where(Uczen.imie=='Rafał')",
@@ -64,8 +117,6 @@ def main(args):
 
     # for obj in eval(kwerendy[6]):
     #     print(obj.nazwisko, obj.imie, obj.egz_mat)
-
-    kw10()
 
     baza.commit()
     baza.close()
