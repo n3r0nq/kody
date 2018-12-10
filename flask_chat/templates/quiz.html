@@ -12,9 +12,13 @@
   {% for p in query%}
   <p>
     <!-- wypisujemy id i tresc pytania -->
-    {{ obj.id }} {{ obj.pytanie }}
+    {{ p.id }} {{ p.pytanie }}
+  <ol>
+    {% for o in p.odpowiedzi %}
+      <li>{{ o.odpowiedz }}</li>
   </p>
   {% endfor %}
+  </ol>
 </body>
 
 </html>

@@ -3,6 +3,7 @@
 # models.py
 from peewee import *
 
+baza_plik = "quiz.db"
 baza = SqliteDatabase('quiz.db')
 
 
@@ -11,16 +12,16 @@ class BaseModel(Model):
         database = baza
 
 
+class Kategoria(BaseModel):
+    kategoria = CharField(null=False)
+
+
 class Pytanie(BaseModel):
-    pytanie = CharField()
-    odp_ok = CharField()
+    pytanie = CharField(null=False)
+    kategoria = ForeignKeyField(Kategoria, related_name='pytania')
 
 
 class Odpowiedz(BaseModel):
-    pnr = ForeignKeyField(Pytanie, related_name='odpowiedzi')
-    odpowiedz = CharField()
-
-
-if __name__ == '__main__':
-    import sys
-    sys.exit(main(sys.argv))
+    odpowiedz = CharField(null=False)
+    pytanie = ForeignKeyField(Pytanie, related_name='odpowiedzi')
+    odpok = BooleanField()

@@ -18,7 +18,6 @@ def dodaj_dane(dane):
         model.insert_many(wpisy, fields=pola).execute()
 
 
-
 def main(args):
     if os.path.exists(baza_plik):
         os.remove(baza_plik)
