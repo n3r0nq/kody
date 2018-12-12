@@ -1,18 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# app.py
+#
+#  app.py
+#
 from flask import Flask, g
-from flask import render_template
-from models import *
-
+from flask import render_template, request
+from modele import *
 
 app = Flask(__name__)
 app.config.update(dict(
     SEKRETNY_KLUCZ='bardzotajnyklucz',
     TYTUL='Czat'
 ))
-
-# dekorator
 
 
 @app.before_request
@@ -31,9 +30,17 @@ def after_request(response):
 def index():
     return render_template('index.html')
 
+# widok QUIZ
 
-@app.route('/quiz')
+
+@app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
+    print(request.form)
+    if request.method == 'POST':
+        wynik = 0
+        for pid, oid in request.form.items():
+            odp = Odpowiedz().get_by_id(int(oid))
+            print(odp)
     pytania = Pytanie.select().join(Odpowiedz).distinct().order_by(Pytanie.id)
     return render_template('quiz.html', query=pytania)
 

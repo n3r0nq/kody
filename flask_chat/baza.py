@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+#
+#  baza.py
 import csv
 import os.path
-from models import *
+from modele import *
 
 
 def czy_jest(plik):
@@ -39,10 +40,9 @@ def dodaj_dane(dane):
 
 
 def main(args):
-    if os.path.exists(baza_plik):
-        os.remove(baza_plik)
-    baza.connect()
-
+    if os.path.exists(baza_nazwa):
+        os.remove(baza_nazwa)
+    baza.connect()  # połączenie z bazą
     baza.create_tables([Kategoria, Pytanie, Odpowiedz])  # tworzymy tabele
 
     dane = {
@@ -51,7 +51,7 @@ def main(args):
         Odpowiedz: 'odpowiedzi',
     }
 
-    # dodaj_dane(dane)
+    dodaj_dane(dane)
 
     baza.commit()
     baza.close()
