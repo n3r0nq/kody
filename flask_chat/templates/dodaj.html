@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html language='pl'>
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Quiz</title>
+</head>
+
+<body>
+  <h1>Quz - dodawanie pytan</h1>
+  <form method="POST" action="">
+    {{ form.csrf_token }}
+
+    {{ form.pytanie.label }}<br>
+    {{ form.pytanie }}<br>
+    <br>
+    {{ form.kategoria.label }}<br>
+    {{ form.kategoria }}<br>
+    <br>
+    <label>Podaj odpwiedzi i zaznacz poprawna</label>
+    <ol>
+    {% for o in form.odpowiedzi %}
+      <li>{{ o }}</li>
+    {% endfor %}
+    </ol>
+
+    <input type="submit" value="Zapisz">
+  </form>
+</body>
+
+</html>
