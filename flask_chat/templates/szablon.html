@@ -2,57 +2,120 @@
 <html language='pl'>
 
 <head>
-    <meta charset="utf-8"/>
-    <title>{% block tytul %}{% endblock %}</title>
+	<meta charset="utf-8"/>
+	<title>{% block tytul %}{% endblock %}</title>
 <!--    <link rel="stylesheet" type="text/css" href="style.css">-->
 
-  <style type="text/css">
-    body
+	<style type="text/css">
+	body
+	{
+        margin: 0 !important;
+        /*  background: url(prism.png); /* from https://www.toptal.com/designers/subtlepatterns/ */ 
+		background-color: #303030;
+		color: #ffffff;
+        font-family: sans-serif;
+	}
+	#menu_glowne
+	{
+        width: 100%;
+        height: 60px;
+        text-align: center;
+		background-color: #535353;
+        padding: 10px 0;
+        border-top: 1px solid #f44e42;
+        border-bottom: 1px solid #f44e42;
+	}
+	#menu li
+	{
+        width: 200px;
+        height: 40px;
+		display: inline;
+        padding: 10px;
+        border-right: 2px dashed #333333;
+	}
+    #menu li:hover
+	{
+        background: #747474;
+	}
+	#menu li:first-child
+	{
+        border-left: 2px dashed #333333;
+	}
+    #menu li:nth-child(4)
     {
-      background-color: #303030;
-      color: #ffffff;
+        margin-left: -5px;
     }
-    #menu_glowne
+    #save_button
     {
-      background-color: #CF9B9B ;
+        text-align: center;
     }
-    #menu li
+    #p_lista
     {
-      display: inline;
+        line-height: 1.5;
     }
-    a
+     #footer
     {
-      text-decoration: none;
-      color: #fDfDfD;
-      font-size: 20px;
+        font-size: 20px;
+        text-align: center;
+        background-color: #747474;
+        padding: 20px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     }
-    a:hover
+    .r_word
     {
-      font-size: 22px;
-      color: red;
+        color: red;    
+    }
+	a
+	{
+		text-decoration: none;
+		color: #fDfDfD;
+		font-size: 25px;
+	}
+	a:hover
+	{
+		color: red;
+	}
+    h1
+    {
+        text-align: center;
+    }
+    p
+    {
+        font-size: 20px;
+        text-align: center;
+    }
+    form
+    {
+        display: block;
+        margin-left: 500px;
+        margin-right: 500px;
+        text-align: center;
     }
 
-  </style>
+	</style>
 </head>
 
 <body>
-<div id=menu_glowne>
-  <ul id="menu">
-    <li>
-      <a href="{{ url_for('index') }}">Strona Głowna</a>
-    </li>
-    <li>
-      <a href="{{ url_for('lista') }}">Lista Pytań</a>
-    </li>
-    <li>
-      <a href="{{ url_for('quiz') }}">Pytania</a></li>
-    <li>
-      <a href="{{ url_for('dodaj') }}">Dodaj Pytanie</a>
-    </li>
-  </ul>
-</div>
-  <h1>{% block h1 %}{% endblock %}</h1>
-  {% block tresc%}{% endblock %}
+    <div id=menu_glowne>
+        <ul id="menu">
+        <li>
+            <a href="{{ url_for('index') }}">Strona Głowna</a>
+        </li>
+        <li>
+            <a href="{{ url_for('lista') }}">Lista Pytań</a>
+        </li>
+        <li>
+            <a href="{{ url_for('quiz') }}">Pytania</a></li>
+        <li>
+            <a href="{{ url_for('dodaj') }}">Dodaj Pytanie</a>
+        </li>
+        </ul>
+        </div>
+        <h1>{% block h1 %}{% endblock %}</h1>
+        {% block tresc%}{% endblock %}
+    <div id="footer">Bartosz Gnatowski &copy; 2018</div>
 </body>
 
 </html>

@@ -1,9 +1,11 @@
 {% extends "szablon.html" %}
 {% block tytul %}Lista Pytan{% endblock %}
-{% block h1 %}Lista pytan!{% endblock %}
+{% block h1 %}<span class="r_word">L</span>ista <span class="r_word">p</span>ytań!{% endblock %}
 {% block tresc%}
-  {% for p in query %}
-    {{ p.id }} {{ p.pytanie }}
-    <br>
-  {% endfor %}
+    <p id="p_lista">
+        {% for p in query %}
+            <span class="r_word">{{ p.id }}</span> {{ p.pytanie }}
+            <br>
+        {% endfor %}
+    </p>
 {% endblock %}
