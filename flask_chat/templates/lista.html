@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html language='pl'>
-
-<head>
-  <meta charset="utf-8"/>
-  <title>Quiz</title>
-</head>
-
-<body>
-  <h1>Pytania</h1>
+{% extends "szablon.html" %}
+{% block tytul %}Lista Pytan{% endblock %}
+{% block h1 %}Lista pytan!{% endblock %}
+{% block tresc%}
   {% for p in query %}
-    {{ p.pytanie }}
+    {{ p.id }} {{ p.pytanie }}
+    <br>
   {% endfor %}
-</body>
-
-</html>
+{% endblock %}

@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html language='pl'>
-
-<head>
-  <meta charset="utf-8"/>
-  <title>Quiz</title>
-</head>
-
-<body>
-  <h1>Quz - dodawanie pytan</h1>
+{% extends "szablon.html" %}
+{% block tytul %}Dodaj Pytania{% endblock %}
+{% block h1 %}Dodaj własne pytanie!{% endblock %}
+{% block tresc%}
   <form method="POST" action="">
     {{ form.csrf_token }}
 
@@ -26,6 +20,4 @@
 
     <input type="submit" value="Zapisz">
   </form>
-</body>
-
-</html>
+{% endblock %}

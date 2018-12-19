@@ -1,0 +1,24 @@
+body
+{
+  background-color: grey;
+  color: #ffffff;
+}
+#menu_glowne
+{
+  background-color: #CF9B9B ;
+}
+#menu li
+{
+  display: inline;
+}
+a
+{
+ text-decoration: none;
+ color: #fDfDfD;
+font-size: 20px;
+}
+a:hover
+{
+  font-size: 22px;
+  color: red;
+}

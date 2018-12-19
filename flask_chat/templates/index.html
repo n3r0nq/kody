@@ -1,23 +1,6 @@
-<!DOCTYPE html>
-<html language='pl'>
-
-<head>
-  <meta charset="utf-8"/>
-  <title>Czat</title>
-</head>
-
-<body>
-  <h1>Witaj na serwerze!</h1>
-  <p>Tworzymy apke chat</p>
-  <a href="http://lo1.sandomierz.pl">Strona szkoły</a>
-  <br>
-  <a href="klasa">klasa</a>
-  <br>
-  <a href="quiz">quiz</a>
-  <br>
-  <a href="dodaj">dodaj</a>
-  <br>
-  <a href="lisa">lista pytan</a>
-</body>
-
-</html>
+{% extends "szablon.html" %}
+{% block tytul %}Quiz - strona głowna{% endblock %}
+{% block h1 %}Witamy w aplikacji Quiz!{% endblock %}
+{% block tresc%}
+  <p>Zapraszamy do dodawania pytan i rozwiązywania quizu!</p>
+{% endblock %}

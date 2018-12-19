@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html language='pl'>
+
+<head>
+  <meta charset="utf-8"/>
+  <title>{% block tytul %}{% endblock %}</title>
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+  <style type="text/css">
+    body
+    {
+      background-color: grey;
+      color: #ffffff;
+    }
+    #menu_glowne
+    {
+      background-color: #CF9B9B ;
+    }
+    #menu li
+    {
+      display: inline;
+    }
+    a
+    {
+      text-decoration: none;
+      color: #fDfDfD;
+      font-size: 20px;
+    }
+    a:hover
+    {
+      font-size: 22px;
+      color: red;
+    }
+
+  </style>
+</head>
+
+<body>
+<div id=menu_glowne>
+  <ul id="menu">
+    <li>
+      <a href="{{ url_for('index') }}" style="text-decoration:none">Strona Głowna</a>
+    </li>
+    <li>
+      <a href="{{ url_for('lista') }}">Lista Pytań</a>
+    </li>
+    <li>
+      <a href="{{ url_for('quiz') }}">Pytania</a></li>
+    <li>
+      <a href="{{ url_for('dodaj') }}">Dodaj Pytanie</a>
+    </li>
+  </ul>
+</div>
+  <h1>{% block h1 %}{% endblock %}</h1>
+  {% block tresc%}{% endblock %}
+</body>
+
+</html>
