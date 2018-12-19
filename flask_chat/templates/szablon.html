@@ -2,13 +2,14 @@
 <html language='pl'>
 
 <head>
-  <meta charset="utf-8"/>
-  <title>{% block tytul %}{% endblock %}</title>
-  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <meta charset="utf-8"/>
+    <title>{% block tytul %}{% endblock %}</title>
+<!--    <link rel="stylesheet" type="text/css" href="style.css">-->
+
   <style type="text/css">
     body
     {
-      background-color: grey;
+      background-color: #303030;
       color: #ffffff;
     }
     #menu_glowne
@@ -38,7 +39,7 @@
 <div id=menu_glowne>
   <ul id="menu">
     <li>
-      <a href="{{ url_for('index') }}" style="text-decoration:none">Strona Głowna</a>
+      <a href="{{ url_for('index') }}">Strona Głowna</a>
     </li>
     <li>
       <a href="{{ url_for('lista') }}">Lista Pytań</a>
