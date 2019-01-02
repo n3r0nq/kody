@@ -1,0 +1,105 @@
+/*quiz/static/style.css*/
+body
+{
+  margin: 0 !important;
+  /*background: url(static/prism.png);  */
+  /*from https://www.toptal.com/designers/subtlepatterns/*/
+  background-color: #303030;
+  color: #ffffff;
+  font-family: sans-serif;
+}
+#menu_glowne
+{
+  width: 100%;
+  height: 60px;
+  text-align: center;
+	background-color: #535353;
+  padding: 10px 0;
+  border-top: 1px solid #f44e42;
+  border-bottom: 1px solid #f44e42;
+	}
+#menu li
+{
+  width: 200px;
+  height: 40px;
+	display: inline;
+  padding: 10px;
+  border-right: 2px dashed #333333;}
+#menu li:hover
+{
+  background: #747474;
+}
+#menu li:first-child
+{
+  border-left: 2px dashed #333333;
+}
+#menu li:nth-child(4)
+{
+  margin-left: -5px;}
+#save_button
+{
+  text-align: center;
+}
+#p_lista
+{
+  line-height: 1.5;
+}
+#footer
+{
+  font-size: 20px;
+  text-align: center;
+  background-color: #747474;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+#komunikaty
+{
+  width: 80%;
+  margin: 2em;
+  border: 2px solid red;
+  border-right: 5px;
+}
+.r_word
+{
+  color: red;
+}
+span.blad
+{
+  color: red;
+}
+span.sukces
+{
+  color: green;
+}
+span.kom
+{
+  color: blue;
+}
+a
+{
+	text-decoration: none;
+	color: #fDfDfD;
+	font-size: 25px;
+	}
+a:hover
+{
+	color: red;
+}
+h1
+{
+  text-align: center;
+}
+p
+{
+  font-size: 20px;
+  text-align: center;
+}
+form
+{
+  display: block;
+  margin-left: 650px;
+  margin-right: 650px;
+  text-align: center;
+}
