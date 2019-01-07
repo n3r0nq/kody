@@ -41,7 +41,18 @@ body
 #save_button
 {
   text-align: center;
-  margin-bottom: 50px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+
 }
 #p_lista
 {
@@ -53,7 +64,7 @@ body
   text-align: center;
   background-color: #747474;
   padding: 20px;
-  position: fixed;
+  position: static;
   bottom: 0;
   width: 100%;
 }
@@ -113,6 +124,7 @@ p
 {
   font-size: 20px;
   text-align: center;
+  padding-bottom: 15px;
 }
 label
 {
