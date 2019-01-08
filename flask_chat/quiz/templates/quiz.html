@@ -2,13 +2,13 @@
 {% block tytul %}Quiz – quiz{% endblock %}
 {% block h1 %}Quiz – odpowiedz na pytania{% endblock %}
 {% block tresc %}
-    <h2>Rozwiąż go!</h2>
+    <h2 class="text-white">Rozwiąż go!</h2>
     <form method="POST">
     <ol>
     {% for p in query %}
         <!-- wypisujemy id i treść pytania -->
 
-    <li>{{ p.pytanie }}
+    <li class="text-white">{{ p.pytanie }}
 
         <br>
         <ol class="alfabet">

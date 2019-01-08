@@ -2,8 +2,8 @@
 {% block tytul %}Quiz – lista pytań{% endblock %}
 {% block h1 %}Quiz – lista pytań{% endblock %}
 {% block tresc %}
-  <h2>Lista pytań</h2>
-  <ol>
+  <h2 class="text-white">Lista pytań</h2>
+  <ol class="text-white">
     {% for p in query %}
        <li>{{ p.pytanie }}</li>
     {% endfor %}
