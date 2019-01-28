@@ -5,7 +5,10 @@
   <h2 class="text-white">Lista pytań</h2>
   <ol class="text-white">
     {% for p in query %}
-       <li>{{ p.pytanie }}</li>
+      <li class="btn-odstep">{{ p.pytanie }}
+      <a href="{{ url_for('usun', pid=p.id) }}" class="btn btn-sm btn-danger">Usun</a>
+
+      </li>
     {% endfor %}
   </ol>
 {% endblock %}
