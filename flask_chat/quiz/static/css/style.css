@@ -1,38 +1,28 @@
-body
-{
-	 background-color: #303030;
-	 color: #ffffff;
-}
+/* quiz/static/style.css */
+
 #komunikaty {
-  width: 80%;
-  margin: 2em;
-  border: 2px solid green;
-  border-radius: 5px;
-  background-color: lightgrey;
+    width: 80%;
+    margin: 2em;
+    border: 2px solid green;
+    border-radius: 5px;
+    background-color: lightgrey;
 }
 span.blad { color: red; }
 span.sukces { color: green; }
 span.kom { color: blue; }
 
-ol.alfabet
+ol.alfabet { list-style-type: lower-alpha; }
+.bg-nawigacja { background-color: #D92F11; }
+
+li.elemdel
 {
-	list-style-type: lower-alpha;
+	padding: 10px;
 }
-.error1
+header
 {
-	padding: 40px 15px;
-	text-align: center;
+	padding: 100px 0px 50px 0px;
 }
-.error2
+section#about
 {
-	margin-top: 15px;
-	margin-bottom: 15px;
-}
-.error3
-{
-;
-}
-li.btn-odstep
-{
-	padding: 5px 0;
+	padding: 50px 0px;
 }

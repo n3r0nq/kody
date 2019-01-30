@@ -3,25 +3,8 @@
 {% block h1 %}Quiz – dodawanie pytań{% endblock %}
 {% block tresc %}
 
-    <h2 class="center text-white">Dodaj pytanie</h2>
+    <h2>Dodaj pytanie</h2>
 
-    <form method="POST" action="">
-        <div class="text-white form-group">
-            {{ form.csrf_token }}
+{% include "pytanie_form.html" %}
 
-            {{ form.pytanie.label }}<br>
-            {{ form.pytanie(class_="form-control") }}<br>
-            {{ form.kategoria.label }}<br>
-            {{ form.kategoria(class_="form-control") }}<br>
-
-            <label>Podaj odpowiedzi i zaznacz poprawną</label><br>
-            <ol>
-            {% for o in form.odpowiedzi %}
-                <li>{{ o }}</li>
-            {% endfor %}
-            </ol>
-
-            <input type="submit" class="btn bnt-default" value="Zapisz pytanie">
-        </div>
-    </form>
 {% endblock %}
