@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# forms.py
+#
+#  forms.py
 from flask_wtf import FlaskForm
 from wtforms import HiddenField, StringField, BooleanField
 from wtforms import SelectField, FormField, FieldList
@@ -10,16 +11,17 @@ blad1 = 'To pole jest wymagane'
 
 
 class OdpForm(FlaskForm):
-    id = HiddenField('Odpowiedz id')
+    id = HiddenField('Odpowiedź id')
     pytanie = HiddenField('Pytanie id')
-    odpowiedz = StringField('Odpowiedz: ',
-                            validators=[Required(message=blad1)])
-    odpok = BooleanField('Poprawna')
+    odpowiedz = StringField('Odpowiedź:',
+                            validators=[Required(message=blad1)],
+                            render_kw={'class': 'form-control'})
+    odpok = BooleanField('Poprawna:')
 
 
 class DodajForm(FlaskForm):
-    id = HiddenField('Pytanie id')  # <input type="hidden">
-    pytanie = StringField('Tresc pytania: ',
+    id = HiddenField('Pytanie id')
+    pytanie = StringField('Treść pytania:',
                           validators=[Required(message=blad1)])
     kategoria = SelectField('Kategoria', coerce=int)
     odpowiedzi = FieldList(FormField(OdpForm), min_entries=3)
