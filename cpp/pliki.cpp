@@ -2,7 +2,6 @@
  * pliki.cpp
  */
 
-
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -11,87 +10,89 @@
 
 using namespace std;
 
-//tekst.txt
-//tekst.bak
+// tekst.txt
+// tekst.bak
 
-int liczZnaki(char plik[])
-{
+float sumuj(char plik[]){
     ifstream wejscie(plik);
-    if(!wejscie)
-    {
-        cout<<"Blad otwarcia pliku!"; return 0;
+    if (!wejscie) { cout << "Błąd otwarcia pliku!"; return 0; }
+    
+    float liczba = 0;
+    float suma = 0;
+    while(!wejscie.eof()) {
+        wejscie >> liczba;
+        suma += liczba;
     }
+    wejscie.close();
+    cout << "Suma liczb: " << suma << endl;
+    return suma;
+}
+
+int liczZnaki(char plik[]) {
+    ifstream wejscie(plik);
+    if (!wejscie) { cout << "Błąd otwarcia pliku!"; return 0; }
     char plik2[15];
-    strcpy(plik2, plik); //kopia tablicy znakowej
+    strcpy(plik2, plik);
     char *wsk;
     wsk = strstr(plik2, ".txt");
     strncpy(wsk, ".bak", 4);
     ofstream wyjscie(plik2);
-    if(!wyjscie)
-    {
-        cout<<"Blad otwarcia pliku!"; return 0;
-    }
+    if (!wyjscie) { cout << "Błąd otwarcia pliku!"; return 0; }
     
-    char z; //pojedynczy odczytany znak
-    int ile, ileal, ilenum, ilealnum, ilewierszy;
-    ile = ileal = ilenum = ilealnum = ilewierszy = 0;
-    int ascii = int(z);
+    char z; // pojedynczy odczytany znak
+    int ile, ileal, ilenum, ilealnum, ilew;
+    ile = ileal = ilenum = ilealnum = ilew = 0;
     
-    
-    while(!wejscie.eof())
-    {
-        wejscie.get(z); //odczytanie pojedynczego znaku 
-        if (wejscie)
-        {
+    while(!wejscie.eof()) {
+        wejscie.get(z);  // odczytanie pojedynczego znaku
+        if (wejscie) {
             ile++;
             if (isalpha(z)) ileal++;
             if (isdigit(z)) ilenum++;
-            if (isalnum(z))
-            {
-                ilealnum++;
-                wyjscie.put(z);
-            }
-            if (ascii==10) ilewierszy++;
+            if (isalnum(z)) ilealnum++;
+            if ((int)z == 10) ilew++;
         }
     }
+    
     wejscie.close(); wyjscie.close();
-    cout<<setw(10)<<"Znakow: "<< ile << endl;
-    cout<<setw(10)<<"Liter: "<< ileal << endl;
-    cout<<setw(10)<<"Cyfr: "<< ilenum << endl;
-    cout<<setw(10)<<"Alfanum: "<< ilealnum << endl;
-    cout<<setw(10)<<"Wierszy: "<< ilewierszy << endl;
+    cout << setw(10) << "Znaków:" << ile << endl;
+    cout << setw(10) << "Liter:" << ileal << endl;
+    cout << setw(10) << "Cyfr:" << ilenum << endl;
+    cout << setw(10) << "Alfnum:" << ilealnum << endl;
+    cout << setw(10) << "Wierszy:" << ilew << endl;
     return ile;
 }
 
-int sumuj(char plik[])
-{
+void czytajCyfry(char plik[]) {
     ifstream wejscie(plik);
-    if(!wejscie)
-    {
-        cout<<"Blad otwarcia pliku!"; return 0;
+    if (wejscie) {
+        string plik2 = "cyfry.txt";
+        ofstream wyjscie(plik2);
+        char z;
+        while(!wejscie.eof()) {
+            wejscie.get(z);  // odczytanie pojedynczego znaku
+            if (wejscie) {
+                if (isdigit(z) || z == '.') wyjscie << z;
+                //TODO: wyeliminować zapisywanie pustych wierszy
+                //TODO: odczytywanie liczb ujemnych
+                if ((int)z == 10) wyjscie << "\n";
+            }
+        }
+        wejscie.close(); wyjscie.close();
     }
-    
-    float liczba = 0;
-    float suma = 0;
-    while(!wejscie.eof())
-    {
-        wejscie >> liczba;
-        if (isdigit(liczba))
-        suma += liczba;
-    }
-    wejscie.close();
-    cout<<"Suma: "<<suma<<endl;
-    return suma;
 }
 
 
 int main(int argc, char **argv)
 {
     char nazwa[15];
-    cout << "Podaj nazwe pliku: ";
+    cout << "Podaj nazwę pliku: ";
     cin >> nazwa;
-    liczZnaki(nazwa);
-    sumuj(nazwa);
+    // liczZnaki(nazwa);
+    czytajCyfry(nazwa);
+    char nazwa2[15] = "cyfry.txt";
+    sumuj(nazwa2);
+        
     return 0;
 }
 
