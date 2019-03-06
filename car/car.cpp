@@ -4,45 +4,34 @@
 #include <iostream>
 #include <cstdlib>
 #include "car.h"
-#include <string>
-
 
 using namespace std;
 
-Car::Car()
-{
+Car::Car() {
     marka=model="";
     rocznik=przebieg=0;
 }
-Car::Car(string mr, string ml, int r, int p)
-{
-    if(r<=1990) r=1990;
+
+Car::Car(string mr, string ml, int r, int p) {
+    if (r <= 1990) r = 1990;
     marka = mr;
     model = ml;
     rocznik = r;
     przebieg = p;
 }
 
-Car::dodaj() //metoda
-{
-    cout<<"**DODAJ SAMOCHOD**"<<endl;
-    cout<<"Podaj marke: "; cin>>marka;
-    cout<<"Podaj model: "; cin>>model;
-    cout<<"Podaj rocznik: "; cin>>rocznik;
-    out<<"Podaj przebieg(km): "; cin>>przebieg;
+void Car::dodaj() {
+    cout << "Dodaj samochód:"<< endl;
+    cout << "Marka: "; cin>>marka;
+    cout << "Model: "; cin>>model;
+    cout << "Rocznik: "; cin>>rocznik;
+    cout << "Przebieg: "; cin>>przebieg;
 }
 
-Car::dane() //metoda
-{
-    cout<<"\nTwoje autko:"<<endl;
-    cout<<"Marka "<<marka;
-    cout<<"Model "<<model;
-    cout<<"Rocznik "<<rocznik;
-    cout<<"Przebieg "<<przebieg<<" km"<<endl;
-}
-
-Car::~Car()
-{
-   cout<<endl<<"To ja, destruktor sie nazywam";
-   cout<<" kasuje obiekty, slowa przepraszam nie uzywam";
+void Car::dane() {
+    cout << "\nTwoje piękne auto:"<< endl;
+    cout << "Marka: " << marka << endl;
+    cout << "Model: " << model << endl;
+    cout << "Rocznik: " << rocznik << endl;
+    cout << "Przebieg: " << przebieg <<"km"<< endl;
 }
