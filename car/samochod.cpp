@@ -6,7 +6,6 @@
 #include "car.h"
 #include "osoba.h"
 
-
 using namespace std;
 
 int main(int argc, char **argv)
@@ -19,7 +18,7 @@ int main(int argc, char **argv)
     s2.dodaj();
     s2.dane();
     s2.laduj(ile);
-    s2.pasazerowie();
+    s2.pasazerowie(ile);
 	return 0;
 }
 

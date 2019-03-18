@@ -52,10 +52,10 @@ void Car::laduj(int)
 }
 
 
-void Car::pasazerowie()
+void Car::pasazerowie(int)
 {
     for(int i=0; i<ileosob; i++)
     {
-        cout<<"W samochodzie jest: "<<osoby[i].imie<< " " <<osoby[i].nazwisko<<" "<<osoby[i].wiek<< " "<< osoby[i].plec;
+        cout<<i+1<<" osoba w samochodzie to: "<<osoby[i].imie<< " " <<osoby[i].nazwisko<<" lat "<<osoby[i].wiek<< ", plec: "<< osoby[i].plec;
     }
 }

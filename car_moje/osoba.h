@@ -13,7 +13,7 @@ class Osoba{
         int lat;
     public:
         Osoba();
-        Car(string, string, int);
+        Car(string, string);
         void dodaj();
         void dane();
         void laduj(int);
