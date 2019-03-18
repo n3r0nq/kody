@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "car.h"
+#include "osoba.h"
 
 using namespace std;
 
@@ -33,5 +34,28 @@ void Car::dane() {
     cout << "Marka: " << marka << endl;
     cout << "Model: " << model << endl;
     cout << "Rocznik: " << rocznik << endl;
-    cout << "Przebieg: " << przebieg <<"km"<< endl;
+    cout << "Przebieg: " << przebieg << endl;
+}
+
+void Car::laduj(int)
+{
+    for(int i=0; i<ileosob; i++)
+    {
+        Osoba o;
+        cout<<"Podaj dane "<<i<<" osoby:"<<endl;
+        cout<<"Imie: "; cin>>o.imie;
+        cout<<"Nazwisko: "; cin>>o.nazwisko;
+        cout<<"Wiek: "; cin>>o.wiek;
+        cout<<"Plec: "; cin>>o.plec;
+        osoby[i]=o;
+    }
+}
+
+
+void Car::pasazerowie()
+{
+    for(int i=0; i<ileosob; i++)
+    {
+        cout<<"W samochodzie jest: "<<osoby[i].imie<< " " <<osoby[i].nazwisko<<" "<<osoby[i].wiek<< " "<< osoby[i].plec;
+    }
 }

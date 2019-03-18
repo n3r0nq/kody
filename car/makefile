@@ -1,11 +1,11 @@
 CXX=g++
 CXXFLAGS=-Wall -I.
-OBJS=samochod.o car.o
+OBJS=samochod.o car.o osoba.o
 
-samochod: samochod.o car.o
-	$(CXX) $(CSSFLAGS) $(OBJS) -o samochod.exe
+cel: samochod.o car.o osoba.o
+	$(CXX) $(CXXFLAGS) $(OBJS) -o samochod.exe
 
 .PHONY: clean
 
-clean: 
+clean:
 	rm -f *.o *.exe *~ core *~

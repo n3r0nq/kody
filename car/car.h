@@ -17,7 +17,7 @@ class Car{
         int ileosob;
     public:
         Car();
-        Car(string, string, int, int, int);
+        Car(string, string, int, int);
         void dodaj();
         void dane();
         void laduj(int);

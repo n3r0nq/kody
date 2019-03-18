@@ -7,16 +7,15 @@
 using namespace std;
 
 class Osoba{
-    private:
+public:
         string imie;
         string nazwisko;
-        int lat;
-    public:
+        int wiek = 0;
+        string plec;
+    
         Osoba();
-        Car(string, string, int);
-        void dodaj();
-        void dane();
-        void laduj(int);
-        void pasazerowie();
+        Osoba(string, string, int, string);
+    
 };
+
 #endif
